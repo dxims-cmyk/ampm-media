@@ -9,9 +9,19 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mediampm.com'),
   title: 'AM:PM Media | Creating Around the Clock',
-  description: 'A multi-disciplinary creative agency ecosystem based in Glasgow, Scotland. Premium branding, motion, sound, and growth solutions.',
-  keywords: ['creative agency', 'branding', 'web design', 'video production', 'marketing', 'Glasgow', 'Scotland'],
+  description:
+    'A multi-disciplinary creative agency ecosystem based in Glasgow, Scotland. Premium branding, visual, sound, and growth solutions.',
+  keywords: [
+    'creative agency',
+    'branding',
+    'web design',
+    'video production',
+    'marketing',
+    'Glasgow',
+    'Scotland',
+  ],
   authors: [{ name: 'AM:PM Media' }],
   icons: {
     icon: '/favicon.svg',
@@ -65,7 +75,7 @@ export default function RootLayout({
       <body className="bg-surface text-white antialiased">
         {/* Noise texture overlay */}
         <div className="noise-overlay" />
-        
+
         {children}
       </body>
     </html>
