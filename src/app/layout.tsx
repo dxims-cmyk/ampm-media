@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { Toaster } from '@/components/ui/shadcn/toaster'
-import { SmoothScroll } from '@/components/providers/SmoothScroll'
 import './globals.css'
 
 const inter = Inter({
@@ -190,9 +189,7 @@ export default function RootLayout({
       </Script>
       
       <body className="bg-[#0C1220] text-white antialiased">
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        {children}
         <Toaster />
       </body>
     </html>
