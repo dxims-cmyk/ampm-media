@@ -5,6 +5,9 @@ import { Footer } from '@/components/layout/Footer'
 import { ContactForm } from '@/components/forms/ContactForm'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 
+// Force dynamic rendering to avoid build-time Supabase env var requirement
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Contact AM:PM Media | Creative Agency Glasgow',
   description: 'Get in touch with AM:PM Media. Contact our Glasgow creative agency for branding, web design, video production, and marketing enquiries.',
