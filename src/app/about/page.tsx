@@ -114,10 +114,10 @@ export default function AboutPage() {
                 Contact Us
               </Link>
               <a
-                href="mailto:hello@mediampm.com"
+                href="mailto:dxims@mediampm.com"
                 className="inline-block px-6 py-3 border border-[#F5F5DC]/30 text-[#F5F5DC] text-sm font-medium uppercase tracking-wider hover:bg-[#F5F5DC]/10 transition-colors text-center"
               >
-                hello@mediampm.com
+                dxims@mediampm.com
               </a>
             </div>
           </section>

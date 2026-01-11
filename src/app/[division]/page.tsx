@@ -272,13 +272,13 @@ export default function DivisionPage() {
                 Ready to work with {division.name}? Contact our Glasgow team and let&apos;s bring your vision to life.
               </p>
               <a
-                href="mailto:hello@mediampm.com"
+                href="mailto:dxims@mediampm.com"
                 className="inline-block px-8 py-4 border text-sm uppercase tracking-wider transition-all duration-300"
                 style={{ 
                   borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)',
                   color: division.textColor
                 }}
-                aria-label={`Contact ${division.name} at hello@mediampm.com`}
+                aria-label={`Contact ${division.name} at dxims@mediampm.com`}
               >
                 Get in touch
               </a>

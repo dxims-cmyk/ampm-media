@@ -82,10 +82,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hello@mediampm.com"
+                  href="mailto:dxims@mediampm.com"
                   className="text-[#F5F5DC]/60 text-sm hover:text-[#F5F5DC] transition-colors"
                 >
-                  hello@mediampm.com
+                  dxims@mediampm.com
                 </a>
               </li>
             </ul>

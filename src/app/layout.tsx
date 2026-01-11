@@ -93,7 +93,7 @@ const organizationSchema = {
     height: 512,
   },
   description: 'AM:PM Media is a multi-disciplinary creative agency based in Glasgow, Scotland offering branding, web design, video production, music studio services, and digital marketing.',
-  email: 'hello@mediampm.com',
+  email: 'dxims@mediampm.com',
   telephone: '+447538330934',
   address: {
     '@type': 'PostalAddress',

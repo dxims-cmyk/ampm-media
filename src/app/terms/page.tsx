@@ -100,7 +100,7 @@ export default function TermsPage() {
               <h2 className="text-[#F5F5DC] text-2xl font-semibold mb-4">9. Contact</h2>
               <p>
                 For questions about these Terms of Service, please contact us at:{' '}
-                <a href="mailto:hello@mediampm.com" className="text-[#F5F5DC] underline">hello@mediampm.com</a>
+                <a href="mailto:dxims@mediampm.com" className="text-[#F5F5DC] underline">dxims@mediampm.com</a>
               </p>
             </section>
 

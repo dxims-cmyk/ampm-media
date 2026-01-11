@@ -254,11 +254,11 @@ export default function HomePage() {
                 Ready to elevate your brand? Get in touch with Glasgow&apos;s creative agency and let&apos;s create something extraordinary together.
               </p>
               <a
-                href="mailto:hello@mediampm.com"
+                href="mailto:dxims@mediampm.com"
                 className="inline-block px-8 py-4 border border-[#F5F5DC]/30 text-[#F5F5DC] text-sm uppercase tracking-wider hover:bg-[#F5F5DC] hover:text-[#0C1220] transition-all duration-300"
-                aria-label="Email AM:PM Media at hello@mediampm.com"
+                aria-label="Email AM:PM Media at dxims@mediampm.com"
               >
-                hello@mediampm.com
+                dxims@mediampm.com
               </a>
               <p className="text-[#F5F5DC]/30 text-sm mt-6">
                 Based in Glasgow, Scotland • Serving clients worldwide

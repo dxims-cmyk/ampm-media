@@ -83,7 +83,7 @@ export default function PrivacyPage() {
               <h2 className="text-[#F5F5DC] text-2xl font-semibold mb-4">7. Contact Us</h2>
               <p>
                 If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us at:{' '}
-                <a href="mailto:hello@mediampm.com" className="text-[#F5F5DC] underline">hello@mediampm.com</a>
+                <a href="mailto:dxims@mediampm.com" className="text-[#F5F5DC] underline">dxims@mediampm.com</a>
               </p>
             </section>
 

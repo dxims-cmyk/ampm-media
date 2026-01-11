@@ -58,8 +58,8 @@ export function ContactForm() {
       toast({
         title: "Failed to send message",
         description: errorMessage.includes('Missing Supabase')
-          ? 'Service temporarily unavailable. Please email us directly at hello@mediampm.com'
-          : `${errorMessage}. Please try again or email us directly at hello@mediampm.com`,
+          ? 'Service temporarily unavailable. Please email us directly at dxims@mediampm.com'
+          : `${errorMessage}. Please try again or email us directly at dxims@mediampm.com`,
         variant: "destructive",
       })
     } finally {

@@ -42,7 +42,7 @@ export default function ContactPage() {
               {/* Contact details */}
               <div className="space-y-6">
                 <a 
-                  href="mailto:hello@mediampm.com"
+                  href="mailto:dxims@mediampm.com"
                   className="flex items-center gap-4 text-[#F5F5DC]/70 hover:text-[#F5F5DC] transition-colors"
                 >
                   <div className="w-12 h-12 rounded-full border border-[#F5F5DC]/20 flex items-center justify-center">
@@ -50,7 +50,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-[#F5F5DC]/40 text-xs uppercase tracking-wider">Email</div>
-                    <div className="text-[#F5F5DC]">hello@mediampm.com</div>
+                    <div className="text-[#F5F5DC]">dxims@mediampm.com</div>
                   </div>
                 </a>
 
