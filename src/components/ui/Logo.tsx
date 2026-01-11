@@ -9,13 +9,15 @@ interface LogoProps {
   showTagline?: boolean
   variant?: 'default' | 'white' | 'icon-only'
   size?: 'sm' | 'md' | 'lg'
+  priority?: boolean
 }
 
-export function Logo({ 
-  className = '', 
-  showTagline = false, 
+export function Logo({
+  className = '',
+  showTagline = false,
   variant = 'default',
-  size = 'md' 
+  size = 'md',
+  priority = false
 }: LogoProps) {
   const sizes = {
     sm: { icon: 32, text: 'text-base' },
@@ -42,7 +44,8 @@ export function Logo({
             alt="AM:PM Media"
             fill
             className="object-contain"
-            priority
+            priority={priority}
+            loading={priority ? undefined : 'lazy'}
           />
         </motion.div>
       </Link>
@@ -52,7 +55,7 @@ export function Logo({
   return (
     <Link href="/" className={`group flex items-center gap-3 ${className}`}>
       {/* Logo Mark */}
-      <motion.div 
+      <motion.div
         className="relative flex-shrink-0"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.2 }}
@@ -60,10 +63,11 @@ export function Logo({
       >
         <Image
           src={logoSrc}
-          alt="AM:PM Media"
+          alt="AM:PM Media Creative Agency Glasgow - Logo"
           fill
           className="object-contain"
-          priority
+          priority={priority}
+          loading={priority ? undefined : 'lazy'}
         />
         
         {/* Subtle glow effect on hover */}
@@ -98,6 +102,7 @@ export function LogoSimple({ className = '' }: { className?: string }) {
           alt="AM:PM Media"
           fill
           className="object-contain"
+          loading="lazy"
         />
       </div>
       <span className="text-xl font-semibold tracking-tight">
@@ -122,6 +127,7 @@ export function LogoIcon({ className = '', size = 40 }: { className?: string; si
           alt="AM:PM Media"
           fill
           className="object-contain"
+          loading="lazy"
         />
       </motion.div>
     </Link>

@@ -1,0 +1,21 @@
+{
+  "name": "AM:PM Media - Creative Agency Glasgow",
+  "short_name": "AM:PM Media",
+  "description": "Multi-disciplinary creative agency based in Glasgow, Scotland offering branding, web design, video production, and marketing services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C1220",
+  "theme_color": "#0C1220",
+  "icons": [
+    {
+      "src": "/images/logo-navy.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo-navy.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

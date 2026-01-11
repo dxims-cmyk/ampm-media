@@ -1,8 +1,11 @@
 // Utility functions and animation variants
 
-// Simple classname combiner
-export function cn(...classes: (string | undefined | null | false)[]) {
-  return classes.filter(Boolean).join(' ')
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+// shadcn cn utility - merges Tailwind classes intelligently
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
 
 // Framer Motion animation variants

@@ -1,19 +1,27 @@
 import { createClient } from '@supabase/supabase-js'
 
-// These will be replaced with actual environment variables
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+// Validate environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Missing Supabase environment variables. Please check .env.local')
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-// Contact form submission type
+// Contact form input type (from user)
 export interface ContactFormData {
   name: string
   email: string
   company?: string
   service: string
   message: string
-  created_at?: string
+}
+
+// Contact form database type (with server-generated fields)
+interface ContactFormRecord extends ContactFormData {
+  created_at: string
 }
 
 // Submit contact form to Supabase

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -20,6 +20,20 @@ export function Header({ variant = 'dark', currentDivision }: HeaderProps) {
   const isDark = variant === 'dark'
   const textColor = isDark ? 'text-white/70 hover:text-white' : 'text-black/70 hover:text-black'
   const logoColor = isDark ? 'text-white' : 'text-black'
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   // Determine the logo text based on current page
   const getLogoText = () => {
@@ -69,6 +83,8 @@ export function Header({ variant = 'dark', currentDivision }: HeaderProps) {
           <button
             className={cn('md:hidden p-2', logoColor)}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -82,25 +98,27 @@ export function Header({ variant = 'dark', currentDivision }: HeaderProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-[60] md:hidden"
           >
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className={cn(
-                'absolute inset-0',
+                'absolute inset-0 z-0',
                 isDark ? 'bg-black/95' : 'bg-white/95'
               )}
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
+            {/* Menu Content */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ delay: 0.1 }}
-              className="absolute inset-0 flex flex-col items-center justify-center gap-8"
+              className="relative z-10 flex flex-col items-center justify-center gap-8 h-full"
             >
               {navLinks.map((link, index) => (
                 <motion.div

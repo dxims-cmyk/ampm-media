@@ -24,9 +24,10 @@ export function Footer() {
               <div className="relative w-10 h-10">
                 <Image
                   src="/images/logo-navy.png"
-                  alt="AM:PM Media"
+                  alt="AM:PM Media - Creative Agency Glasgow Scotland"
                   fill
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
               <span className="text-[#F5F5DC] text-lg font-medium">
@@ -57,12 +58,28 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Company */}
           <div>
             <h4 className="text-[#F5F5DC]/40 text-xs uppercase tracking-[0.2em] mb-4">
-              Contact
+              Company
             </h4>
             <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-[#F5F5DC]/60 text-sm hover:text-[#F5F5DC] transition-colors"
+                >
+                  About AM:PM Media
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-[#F5F5DC]/60 text-sm hover:text-[#F5F5DC] transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
               <li>
                 <a
                   href="mailto:hello@mediampm.com"
@@ -71,26 +88,54 @@ export function Footer() {
                   hello@mediampm.com
                 </a>
               </li>
-              <li>
-                <span className="text-[#F5F5DC]/60 text-sm">
-                  {siteConfig.location}
-                </span>
-              </li>
             </ul>
+            
+            {/* Social Links */}
+            <div className="mt-6">
+              <h4 className="text-[#F5F5DC]/40 text-xs uppercase tracking-[0.2em] mb-3">
+                Follow Us
+              </h4>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.instagram.com/ampmverse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F5F5DC]/60 text-sm hover:text-[#F5F5DC] transition-colors"
+                  aria-label="AM:PM Media on Instagram"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.tiktok.com/@ampmverse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F5F5DC]/60 text-sm hover:text-[#F5F5DC] transition-colors"
+                  aria-label="AM:PM Media on TikTok"
+                >
+                  TikTok
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-[#F5F5DC]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#F5F5DC]/30 text-xs">
-            © {currentYear} {siteConfig.name}. All rights reserved.
+            © {currentYear} AM:PM Media. All rights reserved. Glasgow, Scotland.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-[#F5F5DC]/30 text-xs hover:text-[#F5F5DC]/60 transition-colors">
-              Privacy
+            <Link 
+              href="/privacy" 
+              className="text-[#F5F5DC]/30 text-xs hover:text-[#F5F5DC]/60 transition-colors"
+            >
+              Privacy Policy
             </Link>
-            <Link href="/terms" className="text-[#F5F5DC]/30 text-xs hover:text-[#F5F5DC]/60 transition-colors">
-              Terms
+            <Link 
+              href="/terms" 
+              className="text-[#F5F5DC]/30 text-xs hover:text-[#F5F5DC]/60 transition-colors"
+            >
+              Terms of Service
             </Link>
           </div>
         </div>
