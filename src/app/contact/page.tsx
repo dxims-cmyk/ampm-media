@@ -1,29 +1,59 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
+import Script from 'next/script'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
+
+const RECAPTCHA_SITE_KEY = '6LeCfnUsAAAAAIujA7LTtNbnqC71vVdxDPNdYirt'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 const faqs = [{ question: 'How quickly do you respond?', answer: 'Within 24 hours on business days.' }, { question: "What happens on a discovery call?", answer: "30-minute video call to discuss your goals. No obligation." }, { question: 'Do you work outside Glasgow?', answer: 'Yes. We work across UK and internationally.' }]
 
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (cb: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
+    }
+  }
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', business: '', email: '', phone: '', service: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
+
     try {
-      await fetch('https://impact-full.vercel.app/api/webhooks/lead-form?org_slug=ampm-media', {
+      // Get reCAPTCHA v3 token
+      const token = await new Promise<string>((resolve, reject) => {
+        if (!window.grecaptcha) {
+          reject(new Error('reCAPTCHA not loaded'))
+          return
+        }
+        window.grecaptcha.ready(() => {
+          window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+            .then(resolve)
+            .catch(reject)
+        })
+      })
+
+      // Send to our API route for verification + forwarding
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          recaptchaToken: token,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -33,17 +63,28 @@ export default function ContactPage() {
           service: formData.service,
         }),
       })
+
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || 'Verification failed')
+      }
+
+      setSubmitted(true)
     } catch {
-      // Still show success - the lead data is captured client-side
+      setError('Verification failed. Please try again.')
     }
     setIsSubmitting(false)
-    setSubmitted(true)
-  }
+  }, [formData])
 
   const inputClass = "w-full px-4 py-3 rounded-lg border border-[#2A1E1A]/20 focus:border-impact focus:ring-2 focus:ring-impact/20 outline-none transition-all text-[#2A1E1A] placeholder:text-[#2A1E1A]/40 bg-white"
 
   return (
     <>
+      <Script
+        src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+        strategy="afterInteractive"
+      />
+
       <section className="bg-[#0C1220] py-24 lg:py-32">
         <div className="container-wide">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="text-center max-w-3xl mx-auto">
@@ -135,12 +176,18 @@ export default function ContactPage() {
                     <textarea name="message" rows={3} value={formData.message} onChange={handleChange} className={`${inputClass} resize-none`} placeholder="What are you looking to achieve? Any budget or timeline in mind?" />
                   </div>
 
+                  {error && (
+                    <p className="text-sm text-red-600 text-center">{error}</p>
+                  )}
+
                   <button type="submit" disabled={isSubmitting} className="btn-primary w-full disabled:opacity-50">
-                    {isSubmitting ? 'Sending...' : 'Send Enquiry →'}
+                    {isSubmitting ? 'Verifying...' : 'Send Enquiry →'}
                   </button>
 
                   <p className="text-xs text-[#2A1E1A]/40 text-center">
-                    By submitting, you agree to our <a href="/privacy" className="underline">Privacy Policy</a>
+                    This site is protected by reCAPTCHA and the Google{' '}
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">Privacy Policy</a> and{' '}
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline">Terms of Service</a> apply.
                   </p>
                 </form>
               )}

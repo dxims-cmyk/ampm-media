@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ProcessTimeline, ProofTile, WorkCard } from '@/components/ui'
+import { ScarcityBadge, ProcessTimeline, ProofTile, WorkCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -26,6 +26,9 @@ export default function VisionPage() {
 
         <div className="container-wide relative z-10 py-32">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
+            <motion.div variants={fadeUp} className="mb-6">
+              <ScarcityBadge text="5 spots left for March" variant="light" />
+            </motion.div>
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
               :Vision

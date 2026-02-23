@@ -22,7 +22,7 @@ export default function CreativePage() {
         <div className="container-wide relative z-10 py-32">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
             <motion.div variants={fadeUp} className="mb-6">
-              <ScarcityBadge text="3 spots left for March" variant="light" />
+              <ScarcityBadge text="1 spot left for March" variant="light" />
             </motion.div>
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">

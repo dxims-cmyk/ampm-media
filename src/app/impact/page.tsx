@@ -21,7 +21,7 @@ export default function ImpactPage() {
         <div className="container-wide relative z-10 py-32">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
             <motion.div variants={fadeUp} className="mb-6">
-              <ScarcityBadge text="3 spots left for March" variant="light" />
+              <ScarcityBadge text="Going private — limited access" variant="light" />
             </motion.div>
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
@@ -131,7 +131,7 @@ export default function ImpactPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
 
         <div className="container-wide max-w-3xl mx-auto text-center relative z-10">
-          <ScarcityBadge text="3 spots left for March" variant="light" />
+          <ScarcityBadge text="Doors closing soon" variant="light" />
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mt-8 mb-6">Ready to grow?</h2>
           <p className="text-xl text-white/80 mb-10 font-light">Take the quiz to see if we're a fit.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
