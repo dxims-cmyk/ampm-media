@@ -74,6 +74,57 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      {/* Client Dashboard / SaaS Showcase */}
+      <section className="relative py-24 px-6 bg-gradient-to-b from-black/20 to-black/40">
+        <div className="container-wide relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <span className="inline-block px-3 py-1 bg-white/10 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-6 border border-white/20">Client Portal</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">Your growth. <br className="hidden sm:block" /><span className="text-white/60">One dashboard.</span></h2>
+              <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                Every Impact client gets access to their own dashboard — track leads, view campaign performance, manage content approvals, and see exactly where your money is going. Full transparency, zero guesswork.
+              </p>
+              <ul className="space-y-4 mb-10">
+                {['Real-time lead tracking & notifications', 'Campaign performance analytics', 'Content calendar & approval workflow', 'Monthly reporting & ROI breakdown'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80">
+                    <svg className="w-5 h-5 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://impact-full.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">
+                Client Login
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+              {/* VIDEO/SCREENSHOT PLACEHOLDER — Replace with Loom embed or screenshots */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm">
+                <div className="aspect-video flex items-center justify-center" id="dashboard-demo">
+                  {/*
+                    TO ADD LOOM VIDEO: Replace this div's contents with:
+                    <iframe src="https://www.loom.com/embed/YOUR_LOOM_ID" frameBorder="0" allowFullScreen className="w-full h-full absolute inset-0" />
+
+                    TO ADD SCREENSHOT: Replace with:
+                    <img src="/images/dashboard-screenshot.png" alt="Impact Dashboard" className="w-full h-full object-cover" />
+                  */}
+                  <div className="text-center p-8">
+                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-white/60 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                    </div>
+                    <p className="text-white/40 text-sm font-display font-bold uppercase tracking-widest">Dashboard Walkthrough</p>
+                    <p className="text-white/25 text-xs mt-2">Coming soon</p>
+                  </div>
+                </div>
+              </div>
+              {/* Decorative glow */}
+              <div className="absolute -inset-4 bg-impact/20 rounded-3xl blur-3xl -z-10 opacity-50"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ - Transparent to show deep red */}
       <StitchFAQ items={faqs} />
 
