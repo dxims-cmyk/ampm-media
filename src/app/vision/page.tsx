@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ScarcityBadge, ProcessTimeline, ProofTile, WorkCard } from '@/components/ui'
+import { ProcessTimeline, ProofTile, WorkCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -15,8 +15,6 @@ const services = [
 ]
 const stats = [{ value: '1M+', label: 'Views Generated' }, { value: '80+', label: 'Videos Produced' }, { value: '15+', label: 'Clients' }, { value: '24h', label: 'Turnaround' }]
 const processSteps = [{ number: '01', title: 'Concept', description: 'We storyboard and plan the shoot.' }, { number: '02', title: 'Capture', description: 'Professional filming on-site.' }, { number: '03', title: 'Edit', description: 'Fast-paced editing optimised for retention.' }, { number: '04', title: 'Delivery', description: 'Ready-to-post assets within 24-48 hours.' }]
-const forYouItems = ["You need high-quality social content", "You want to showcase your physical space", "You need ads that actually convert", "You want a reliable production partner"]
-const notForYouItems = ["You want cheap, low-quality phone footage", "You don't care about lighting or sound", "You want a 2-hour documentary", "You're not ready to invest in video"]
 const faqs = [{ question: 'Do you provide models?', answer: 'We can source talent, but we prefer to use real people / staff where possible for authenticity.' }, { question: 'How much does it cost?', answer: 'We have packages starting from £1,500/month for ongoing content.' }, { question: 'Do you travel?', answer: 'Yes, we cover the whole UK. Travel expenses apply outside Glasgow.' }]
 
 export default function VisionPage() {

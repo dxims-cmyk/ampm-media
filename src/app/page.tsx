@@ -180,7 +180,7 @@ export default function HomePage() {
       <section className="py-32 relative overflow-hidden bg-gradient-to-br from-impact to-[#4a0a11]">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <ScarcityBadge text="Only 3 Spots Left for February" variant="light" />
+          <ScarcityBadge text="Only 3 Spots Left for March" variant="light" />
 
           <h2 className="font-display font-black text-white text-3xl sm:text-5xl md:text-7xl mb-6 tracking-tighter mt-8">
             STOP GUESSING.
