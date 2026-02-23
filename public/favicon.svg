@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="sphereGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sphereGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#2C3E50"/>
+  <!-- Top circle -->
+  <circle cx="16" cy="11" r="7" fill="url(#sphereGrad1)"/>
+  <!-- Bottom circle -->
+  <circle cx="16" cy="21" r="7" fill="url(#sphereGrad2)"/>
+  <!-- Vesica piscis intersection (navy) -->
+  <path d="M16,14 A7,7 0 0,1 16,18 A7,7 0 0,1 16,14" fill="#2C3E50"/>
+</svg>

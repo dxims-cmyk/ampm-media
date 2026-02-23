@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   AM:PM MEDIA - Design System
+   ============================================ */
+
+:root {
+  --font-body: 'Inter', system-ui, sans-serif;
+  --color-dark: #0C1220;
+  --color-cream: #F5F5DC;
+}
+
+/* Base */
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+
+/* Links & Buttons base */
+a { text-decoration: none; color: inherit; }
+button { background: none; border: none; cursor: pointer; font-family: inherit; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0C1220; }
+::-webkit-scrollbar-thumb { background: rgba(245, 245, 220, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(245, 245, 220, 0.4); }
+
+/* Selection */
+::selection { background: #F5F5DC; color: #0C1220; }
+
+/* ============================================
+   Container
+   ============================================ */
+.container-wide {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container-wide { padding-left: 3rem; padding-right: 3rem; }
+}
+
+/* ============================================
+   Section Padding
+   ============================================ */
+.section-padding { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 768px) { .section-padding { padding-top: 6rem; padding-bottom: 6rem; } }
+@media (min-width: 1024px) { .section-padding { padding-top: 8rem; padding-bottom: 8rem; } }
+
+/* ============================================
+   Buttons - Hormozi-style dominant CTAs
+   ============================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: #6E0F1A;
+  color: #F5F5DC;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  min-height: 56px;
+}
+.btn-primary:hover {
+  background-color: #8B1422;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(110, 15, 26, 0.4);
+}
+@media (max-width: 768px) {
+  .btn-primary {
+    padding: 1.125rem 2rem;
+    font-size: 1.125rem;
+    min-height: 60px;
+    width: 100%;
+  }
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: transparent;
+  color: #F5F5DC;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(245, 245, 220, 0.3);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  min-height: 56px;
+}
+.btn-secondary:hover {
+  border-color: rgba(245, 245, 220, 0.6);
+  background-color: rgba(245, 245, 220, 0.05);
+}
+@media (max-width: 768px) {
+  .btn-secondary {
+    padding: 1.125rem 2rem;
+    font-size: 1.125rem;
+    min-height: 60px;
+    width: 100%;
+  }
+}
+
+/* ============================================
+   Shadows
+   ============================================ */
+.shadow-premium {
+  box-shadow: 0 4px 6px rgba(42, 30, 26, 0.05), 0 12px 40px rgba(42, 30, 26, 0.1);
+}
+.shadow-premium-lg {
+  box-shadow: 0 8px 16px rgba(42, 30, 26, 0.06), 0 24px 64px rgba(42, 30, 26, 0.14);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(110, 15, 26, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(110, 15, 26, 0.5); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-delayed { animation: float 4s ease-in-out infinite; animation-delay: 2s; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* ============================================
+   Utility
+   ============================================ */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+}
