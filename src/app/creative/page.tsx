@@ -44,23 +44,24 @@ export default function CreativePage() {
         </div>
       </section>
 
-      {/* Proof - Darker Overlay */}
+      {/* Selected Work */}
       <section id="work" className="relative py-24 px-6 bg-black/20">
         <div className="container-wide">
           <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Selected Work</h2></div>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* The instruction was: "Replace StatsBar and FAQAccordion with Stitch versions." */}
-            {/* There was no StatsBar in the original code, but the instruction's code block introduced StitchStats. */}
-            {/* The instruction's code block also replaced WorkCard with ProofTile. */}
-            {/* I will follow the provided code block for the changes. */}
-            {/* The original import was: `import { ProcessTimeline, FAQAccordion, WorkCard } from '@/components/ui'` */}
-            {/* The new imports should be: `import { ProcessTimeline, ProofTile } from '@/components/ui'` and `import { StitchStats } from '@/components/stitch/StitchStats'` and `import { StitchFAQ } from '@/components/stitch/StitchFAQ'` */}
-            {/* This means `FAQAccordion` and `WorkCard` are removed from the `components/ui` import. */}
-            {/* `ProofTile` is added to `components/ui` import. */}
-            {/* `StitchStats` and `StitchFAQ` are added as new imports. */}
-            {/* The `ProcessTimeline` component usage remains unchanged. */}
-            <ProcessTimeline steps={processSteps} variant="dark" />
+            <ProofTile metric="Full Brand" label="Identity & App Design" client="Wee Drop" imagePlaceholder="" featured />
+            <ProofTile metric="Website" label="Design & Development" client="Wee Drop" imagePlaceholder="" />
+            <ProofTile metric="Visual ID" label="Logo & Brand Guidelines" client="AM:PM Media" imagePlaceholder="" />
           </div>
+          <StitchStats stats={stats} />
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="relative py-24 px-6 bg-gradient-to-b from-black/20 to-black/40">
+        <div className="container-wide">
+          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">How it works</h2></div>
+          <ProcessTimeline steps={processSteps} variant="dark" />
         </div>
       </section>
 
