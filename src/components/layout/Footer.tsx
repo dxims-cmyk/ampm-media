@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { navLinks, siteConfig } from '@/lib/config'
 
@@ -33,9 +32,12 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-flex flex-col gap-2 mb-4 group">
-              <span className={`text-2xl sm:text-4xl md:text-5xl font-display font-bold ${branding.color} transition-colors duration-300`}>
-                {branding.text}
-              </span>
+              <div className="flex items-center gap-3">
+                <img src="/icon-192.png" alt="AM:PM Media" className="w-10 h-10 rounded-lg" />
+                <span className={`text-2xl sm:text-4xl md:text-5xl font-display font-bold ${branding.color} transition-colors duration-300`}>
+                  {branding.text}
+                </span>
+              </div>
               <span className="font-signature text-lg sm:text-2xl md:text-3xl text-[#F5F5DC] group-hover:text-white transition-colors">
                 Creating Around The Clock
               </span>

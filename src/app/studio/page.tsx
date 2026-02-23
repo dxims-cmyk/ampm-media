@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ScarcityBadge, ProofTile } from '@/components/ui'
+import { ScarcityBadge } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -15,10 +15,19 @@ const sessions = [
   { id: '5hr', duration: '5 Hours', price: '£150', saving: 'Save £50', description: 'Full session. Write, record, release-ready.', calUrl: 'https://cal.com/ampmedia/studio-session-5hr' },
 ]
 
-const services = [{ title: 'Podcast Recording', price: '£80/hr', features: ['4x Shure SM7B Microphones', 'Rodecaster Pro II Console', '4K Multi-Cam Setup', 'Sound Treated Room'] }, { title: 'Content Production', price: '£100/hr', features: ['Professional Lighting', 'Green Screen Available', 'Autocue System', 'Camera Operator Included'] }]
-const stats = [{ value: '4K', label: 'Video Quality' }, { value: '4', label: 'Cam Setup' }, { value: '24/7', label: 'Access' }, { value: '100%', label: 'Sound Proof' }]
+const services = [
+  { title: 'Recording', description: 'Vocals, instruments, and full tracks in a professional sound-treated environment.', features: ['Vocal recording & comping', 'Live instrument tracking', 'Sound-treated isolation room', 'Multi-track session files'] },
+  { title: 'Mixing', description: 'Transform raw recordings into polished, release-ready tracks.', features: ['Full mix from stems', 'EQ, compression & effects', 'Reference track matching', 'Unlimited revisions'] },
+  { title: 'Mastering', description: 'Final polish for streaming, vinyl, or any format.', features: ['Loudness optimisation', 'Stereo enhancement', 'Format-specific masters', 'Distribution-ready files'] },
+]
+const stats = [{ value: 'Pro', label: 'Sound Treated' }, { value: '48kHz', label: 'Recording Quality' }, { value: '24bit', label: 'Bit Depth' }, { value: '100%', label: 'Acoustically Treated' }]
 const equipment = ['Neumann TLM 103', 'Shure SM7B', 'Apollo Twin Interface', 'Ableton Live / Logic Pro', 'Professional acoustic treatment', 'Comfortable lounge area']
-const faqs = [{ question: 'Do I need to bring SD cards?', answer: 'No, we handle all data transfer. You get a link to download files within 24 hours.' }, { question: 'Is there an engineer?', answer: 'Yes, all bookings include a studio engineer to handle technical setup.' }, { question: 'Can I livestream?', answer: 'Yes, we have high-speed fibre internet and dedicated streaming hardware.' }]
+const faqs = [
+  { question: 'What do I need to bring?', answer: 'Just yourself and your ideas. We provide all equipment, microphones, and software. If you play an instrument, bring that too.' },
+  { question: 'Is there an engineer?', answer: 'Yes, all bookings include a studio engineer to handle recording, mixing, and technical setup so you can focus on performing.' },
+  { question: 'Can I get my track mixed and mastered here?', answer: 'Absolutely. We offer recording, mixing, and mastering all under one roof. Most artists book a longer session to cover the full process.' },
+  { question: 'What genres do you work with?', answer: 'Everything — rap, R&B, pop, rock, acoustic, voiceovers. The studio is versatile and the engineer adapts to your style.' },
+]
 
 export default function StudioPage() {
   const [selectedSession, setSelectedSession] = useState<string | null>(null)
@@ -40,12 +49,15 @@ export default function StudioPage() {
               <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl font-display font-bold text-white mb-6">
                 :Studio
               </motion.h1>
+              <motion.p variants={fadeUp} className="text-xl text-white/90 mb-2 font-medium">
+                Music Recording Studio
+              </motion.p>
               <motion.p variants={fadeUp} className="text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
-                Professional recording in Glasgow. Podcasts, music, voiceovers — a comfortable space with professional equipment and engineering support.
+                Professional recording, mixing, and mastering in Glasgow. A sound-treated space with premium equipment and engineering support to bring your music to life.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
                 <Link href="#book" className="bg-white text-studio font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">Book a Session</Link>
-                <Link href="#services" className="border-2 border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide">See Pricing</Link>
+                <Link href="#services" className="border-2 border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide">See Services</Link>
               </motion.div>
             </motion.div>
             <div className="relative aspect-[4/3] bg-white/10 rounded-2xl overflow-hidden border border-white/20 shadow-2xl backdrop-blur-sm">
@@ -58,22 +70,13 @@ export default function StudioPage() {
       {/* Services */}
       <section id="services" className="relative py-24 px-6 bg-gradient-to-b from-transparent to-black/20">
         <div className="container-wide">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Services & Pricing</h2></div>
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <ProofTile metric="Pro" label="Audio" client="Recording" imagePlaceholder="" featured />
-            <ProofTile metric="4K" label="Video" client="Production" imagePlaceholder="" />
-            <ProofTile metric="Live" label="Streaming" client="Setup" imagePlaceholder="" />
-          </div>
+          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What We Do</h2></div>
           <StitchStats stats={stats} />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
             {services.map((service, i) => (
               <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 shadow-xl border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-md">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-display font-bold text-white">{service.title}</h3>
-                  <div className="text-right">
-                    <p className="text-3xl font-display font-bold text-camel">{service.price}</p>
-                  </div>
-                </div>
+                <h3 className="text-2xl font-display font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-white/60 text-sm mb-6 leading-relaxed">{service.description}</p>
                 <div className="w-full h-px bg-white/10 mb-6"></div>
                 <ul className="space-y-3">{service.features.map((item, j) => <li key={j} className="flex items-center gap-3 text-white/80 text-sm"><svg className="w-4 h-4 text-camel" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>{item}</li>)}</ul>
               </motion.div>
@@ -151,7 +154,6 @@ export default function StudioPage() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Selected session summary */}
                 <div className="flex items-center justify-between mb-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-6">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-camel/20 flex items-center justify-center">
@@ -171,7 +173,6 @@ export default function StudioPage() {
                   </button>
                 </div>
 
-                {/* Cal.com embed */}
                 <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-2xl">
                   <iframe
                     src={`${selected?.calUrl}?embed=true&theme=light`}

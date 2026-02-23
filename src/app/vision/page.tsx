@@ -12,6 +12,7 @@ const services = [
   { title: 'Social Video', description: 'Scroll-stopping content for TikTok, Reels, and Shorts', includes: ['Concept development', 'On-location filming', 'Professional editing', 'Platform optimisation'] },
   { title: 'Brand Films', description: 'Cinematic storytelling that captures your brand essence', includes: ['Script writing', 'Storyboarding', 'Full production', 'Colour grading'] },
   { title: 'Content Days', description: "Batch-produce a month's content in a single session", includes: ['Pre-production planning', 'Full day shoot', '10-15 deliverables', 'Same-week turnaround'] },
+  { title: 'Studio Shoots', description: 'Headshots, product photography, and video content shot in our Glasgow studio', includes: ['Professional lighting setup', 'Green screen available', 'Autocue for presenting', 'Camera operator included'] },
 ]
 const stats = [{ value: '1M+', label: 'Views Generated' }, { value: '80+', label: 'Videos Produced' }, { value: '15+', label: 'Clients' }, { value: '24h', label: 'Turnaround' }]
 const processSteps = [{ number: '01', title: 'Concept', description: 'We storyboard and plan the shoot.' }, { number: '02', title: 'Capture', description: 'Professional filming on-site.' }, { number: '03', title: 'Edit', description: 'Fast-paced editing optimised for retention.' }, { number: '04', title: 'Delivery', description: 'Ready-to-post assets within 24-48 hours.' }]
@@ -60,7 +61,7 @@ export default function VisionPage() {
       <section className="relative py-24 px-6 bg-gradient-to-b from-transparent to-black/20">
         <div className="container-wide relative z-10">
           <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What we create</h2></div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, i) => (
               <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-display font-bold text-white mb-4">{service.title}</h3>
