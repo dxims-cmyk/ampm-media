@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ScarcityBadge, ProofTile } from '@/components/ui'
+import { ScarcityBadge, ProofTile, MediaCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -21,7 +21,7 @@ export default function ImpactPage() {
         <div className="container-wide relative z-10 py-32">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
             <motion.div variants={fadeUp} className="mb-6">
-              <ScarcityBadge text="Going private — limited access" variant="light" />
+              <ScarcityBadge text="Going private - limited access" variant="light" />
             </motion.div>
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
@@ -31,7 +31,7 @@ export default function ImpactPage() {
               Content + Meta ads that generate enquiries
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed">
-              Stop posting into the void. We build and run your entire content machine — from strategy to execution to paid amplification.
+              Stop posting into the void. We build and run your entire content machine - from strategy to execution to paid amplification.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Link href="/quiz" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">See If We're a Fit</Link>
@@ -48,10 +48,10 @@ export default function ImpactPage() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-12">You're posting content, but it's not converting</h2>
           <div className="grid sm:grid-cols-2 gap-4 text-left">
             {["You spend hours creating content that gets 12 likes", "You've tried boosting posts with zero results", "You know you should be on TikTok but have no time", "Your competitors are everywhere and you're invisible"].map((item, i) => (
-              <div key={i} className="flex items-start gap-4 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors backdrop-blur-sm">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex items-start gap-4 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors backdrop-blur-sm">
                 <svg className="w-6 h-6 text-white/40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                 <span className="text-white/90 font-medium">{item}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function ImpactPage() {
       {/* Proof - Darker Overlay */}
       <section className="relative py-24 px-6 bg-black/20">
         <div className="container-wide">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Results that speak</h2></div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Results that speak</h2></motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <ProofTile metric="167K" label="views in 30 days" client="Namak Mandi" imagePlaceholder="" featured />
@@ -79,7 +79,7 @@ export default function ImpactPage() {
               <span className="inline-block px-3 py-1 bg-white/10 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-6 border border-white/20">Client Portal</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">Your growth. <br className="hidden sm:block" /><span className="text-white/60">One dashboard.</span></h2>
               <p className="text-lg text-white/70 mb-8 leading-relaxed">
-                Every Impact client gets access to their own dashboard — track leads, view campaign performance, manage content approvals, and see exactly where your money is going. Full transparency, zero guesswork.
+                Every Impact client gets access to their own dashboard - track leads, view campaign performance, manage content approvals, and see exactly where your money is going. Full transparency, zero guesswork.
               </p>
               <ul className="space-y-4 mb-10">
                 {['Real-time lead tracking & notifications', 'Campaign performance analytics', 'Content calendar & approval workflow', 'Monthly reporting & ROI breakdown'].map((item, i) => (
@@ -96,7 +96,7 @@ export default function ImpactPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-              {/* VIDEO/SCREENSHOT PLACEHOLDER — Replace with Loom embed or screenshots */}
+              {/* VIDEO/SCREENSHOT PLACEHOLDER - Replace with Loom embed or screenshots */}
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 backdrop-blur-sm">
                 <div className="aspect-video flex items-center justify-center" id="dashboard-demo">
                   {/*
@@ -118,6 +118,21 @@ export default function ImpactPage() {
               {/* Decorative glow */}
               <div className="absolute -inset-4 bg-impact/20 rounded-3xl blur-3xl -z-10 opacity-50"></div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* See The Results - Media Section */}
+      <section className="relative py-24 px-6 bg-black/30">
+        <div className="container-wide">
+          <div className="text-center mb-16">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">See The Results</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-white/60 max-w-xl mx-auto">Real campaigns. Real numbers. Real growth.</motion.p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <MediaCard title="Namak Mandi - 167K Views" description="Content day to viral results" />
+            <MediaCard title="Growth System Walkthrough" description="How we generate enquiries" />
+            <MediaCard title="Client Dashboard Demo" description="Full transparency on performance" />
           </div>
         </div>
       </section>

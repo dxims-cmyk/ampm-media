@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ScarcityBadge } from '@/components/ui'
+import { ScarcityBadge, MediaCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -26,7 +26,7 @@ const faqs = [
   { question: 'What do I need to bring?', answer: 'Just yourself and your ideas. We provide all equipment, microphones, and software. If you play an instrument, bring that too.' },
   { question: 'Is there an engineer?', answer: 'Yes, all bookings include a studio engineer to handle recording, mixing, and technical setup so you can focus on performing.' },
   { question: 'Can I get my track mixed and mastered here?', answer: 'Absolutely. We offer recording, mixing, and mastering all under one roof. Most artists book a longer session to cover the full process.' },
-  { question: 'What genres do you work with?', answer: 'Everything — rap, R&B, pop, rock, acoustic, voiceovers. The studio is versatile and the engineer adapts to your style.' },
+  { question: 'What genres do you work with?', answer: 'Everything - rap, R&B, pop, rock, acoustic, voiceovers. The studio is versatile and the engineer adapts to your style.' },
 ]
 
 export default function StudioPage() {
@@ -70,11 +70,11 @@ export default function StudioPage() {
       {/* Services */}
       <section id="services" className="relative py-24 px-6 bg-gradient-to-b from-transparent to-black/20">
         <div className="container-wide">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What We Do</h2></div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What We Do</h2></motion.div>
           <StitchStats stats={stats} />
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             {services.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 shadow-xl border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-md">
+              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 shadow-xl border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-md">
                 <h3 className="text-2xl font-display font-bold text-white mb-3">{service.title}</h3>
                 <p className="text-white/60 text-sm mb-6 leading-relaxed">{service.description}</p>
                 <div className="w-full h-px bg-white/10 mb-6"></div>
@@ -90,7 +90,7 @@ export default function StudioPage() {
         <div className="container-wide">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-8">Professional setup</h2>
+              <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl font-display font-bold text-white mb-8">Professional setup</motion.h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {equipment.map((item, i) => <div key={i} className="flex items-center gap-3 text-white/80 text-lg"><svg className="w-5 h-5 text-camel" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>{item}</div>)}
               </div>
@@ -161,7 +161,7 @@ export default function StudioPage() {
                     </div>
                     <div>
                       <p className="text-white font-display font-bold text-lg">{selected?.duration}</p>
-                      <p className="text-white/60 text-sm">{selected?.price} — {selected?.description}</p>
+                      <p className="text-white/60 text-sm">{selected?.price} - {selected?.description}</p>
                     </div>
                   </div>
                   <button
@@ -184,6 +184,23 @@ export default function StudioPage() {
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Studio Tour - Loom Embed Slot */}
+      <section className="relative py-24 px-6 bg-black/30">
+        <div className="container-wide">
+          <div className="text-center mb-16">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Studio Tour</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-white/60 max-w-xl mx-auto">Take a look around our Glasgow recording space.</motion.p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            {/*
+              TO ADD LOOM VIDEO: Replace the MediaCard below with:
+              <MediaCard title="Studio Tour" type="loom" loomId="YOUR_LOOM_ID" />
+            */}
+            <MediaCard title="Studio Tour" description="Full walkthrough of our sound-treated recording space" />
+          </div>
         </div>
       </section>
 

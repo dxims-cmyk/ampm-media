@@ -123,7 +123,7 @@ export function ContactForm() {
             <SelectContent>
               {activeDivisions.map((division) => (
                 <SelectItem key={division.id} value={division.shortName}>
-                  {division.shortName} — {division.tagline}
+                  {division.shortName} - {division.tagline}
                 </SelectItem>
               ))}
               <SelectItem value="Other">Other</SelectItem>

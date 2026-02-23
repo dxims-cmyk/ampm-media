@@ -31,25 +31,25 @@ export interface Division {
 export const pillars: Record<Pillar, { name: string; description: string }> = {
   CREATE: {
     name: 'CREATE',
-    description: 'Produce assets — design, video, audio',
+    description: 'Produce assets - design, video, audio',
   },
   GROW: {
     name: 'GROW',
-    description: 'Drive results — marketing, distribution, ads',
+    description: 'Drive results - marketing, distribution, ads',
   },
   GUIDE: {
     name: 'GUIDE',
-    description: 'Strategy + systems — consulting, ops',
+    description: 'Strategy + systems - consulting, ops',
   },
   BUILD: {
     name: 'BUILD',
-    description: 'Long-term expansion — ventures, products, IP',
+    description: 'Long-term expansion - ventures, products, IP',
   },
 }
 
 export const divisions: Division[] = [
   // ============================================
-  // PILLAR 1: CREATE — Produce assets
+  // PILLAR 1: CREATE - Produce assets
   // ============================================
   {
     id: 'creative',
@@ -149,7 +149,7 @@ export const divisions: Division[] = [
   },
 
   // ============================================
-  // PILLAR 2: GROW — Drive results
+  // PILLAR 2: GROW - Drive results
   // ============================================
   {
     id: 'impact',
@@ -169,7 +169,7 @@ export const divisions: Division[] = [
   },
 
   // ============================================
-  // PILLAR 3: GUIDE — Strategy + systems
+  // PILLAR 3: GUIDE - Strategy + systems
   // ============================================
   {
     id: 'insight',
@@ -205,7 +205,7 @@ export const divisions: Division[] = [
   },
 
   // ============================================
-  // PILLAR 4: BUILD — Long-term expansion
+  // PILLAR 4: BUILD - Long-term expansion
   // ============================================
   {
     id: 'ventures',

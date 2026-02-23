@@ -31,7 +31,7 @@ function calculateResult(answers: Record<string, string>): QuizResult {
   if (goal === 'record') {
     return { type: 'studio-session', title: 'Studio Session', description: "Our Studio is equipped for podcasts, music, and voiceovers.", recommendation: 'Studio Booking', investment: 'From £150/session', cta: 'Book Studio Time', ctaLink: '/contact?service=studio' }
   }
-  return { type: 'not-ready', title: 'Not Quite Ready', description: "You might not be ready for us yet — and that's okay. Build your foundation first.", recommendation: 'Build your foundation', investment: 'Free resources', cta: 'Follow @ampmverse', ctaLink: 'https://instagram.com/ampmverse' }
+  return { type: 'not-ready', title: 'Not Quite Ready', description: "You might not be ready for us yet - and that's okay. Build your foundation first.", recommendation: 'Build your foundation', investment: 'Free resources', cta: 'Follow @ampmverse', ctaLink: 'https://instagram.com/ampmverse' }
 }
 
 export function QuizFlow() {

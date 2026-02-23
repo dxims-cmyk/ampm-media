@@ -19,7 +19,7 @@ const stats = [
 ]
 
 const faqs = [
-  { question: 'How is AM:PM different from other agencies?', answer: "We're not just creatives — we're operators. We think like business owners because we are one. Every decision is driven by ROI, not just aesthetics." },
+  { question: 'How is AM:PM different from other agencies?', answer: "We're not just creatives - we're operators. We think like business owners because we are one. Every decision is driven by ROI, not just aesthetics." },
   { question: 'What kind of results can I expect?', answer: "Our Growth System clients typically see 3-5x increase in engagement within 30 days, with measurable enquiry growth by month 2-3. We track everything." },
   { question: 'Do you work with businesses outside Glasgow?', answer: 'Yes. We work across the UK and internationally. Most communication happens via video calls and WhatsApp.' },
 ]
@@ -149,7 +149,7 @@ export default function HomePage() {
               Founded in Glasgow, AM:PM Media bridges the gap between creative excellence and hard data. We don't believe in vanity metrics. We believe in revenue, retention, and results.
             </p>
             <p className="text-xl text-[#F5F5DC]/70 leading-relaxed">
-              Our "around the clock" philosophy isn't just a tagline—it's how we approach campaign optimisation. While the world slows down, our systems are learning, adapting, and scaling your business.
+              Our "around the clock" philosophy isn't just a tagline-it's how we approach campaign optimisation. While the world slows down, our systems are learning, adapting, and scaling your business.
             </p>
           </motion.div>
         </div>

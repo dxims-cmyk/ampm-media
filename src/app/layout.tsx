@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Manrope, Mr_Dafoe } from 'next/font/google'
+import { Inter, Manrope, Mr_Dafoe, Dancing_Script } from 'next/font/google'
 import Script from 'next/script'
 import { Toaster } from '@/components/ui/shadcn/toaster'
 import { FloatingNav } from '@/components/layout/FloatingNav'
@@ -12,11 +12,12 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
 const mrDafoe = Mr_Dafoe({ weight: '400', subsets: ['latin'], variable: '--font-signature', display: 'swap' })
+const dancingScript = Dancing_Script({ subsets: ['latin'], variable: '--font-dancing', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mediampm.com'),
   title: { default: 'AM:PM Media (@ampmverse) | Creative Agency Glasgow', template: '%s | AM:PM Media' },
-  description: 'AM:PM Media (@ampmverse) — Glasgow creative agency delivering content that converts. Branding, video production, marketing strategy, and recording studio services. Follow us on Instagram @ampmverse.',
+  description: 'AM:PM Media (@ampmverse) - Glasgow creative agency delivering content that converts. Branding, video production, marketing strategy, and recording studio services. Follow us on Instagram @ampmverse.',
   keywords: ['AM:PM Media', 'ampmverse', '@ampmverse', 'Glasgow creative agency', 'content agency Glasgow', 'video production Glasgow', 'branding Glasgow', 'recording studio Glasgow', 'social media management Glasgow'],
   authors: [{ name: 'AM:PM Media', url: 'https://mediampm.com' }],
   creator: 'AM:PM Media',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${inter.variable} ${manrope.variable} ${mrDafoe.variable}`}>
+    <html lang="en-GB" className={`${inter.variable} ${manrope.variable} ${mrDafoe.variable} ${dancingScript.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

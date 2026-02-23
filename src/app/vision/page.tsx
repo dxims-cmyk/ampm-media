@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ScarcityBadge, ProcessTimeline, ProofTile, WorkCard } from '@/components/ui'
+import { ScarcityBadge, ProofTile, WorkCard, MediaCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -15,7 +15,11 @@ const services = [
   { title: 'Studio Shoots', description: 'Headshots, product photography, and video content shot in our Glasgow studio', includes: ['Professional lighting setup', 'Green screen available', 'Autocue for presenting', 'Camera operator included'] },
 ]
 const stats = [{ value: '1M+', label: 'Views Generated' }, { value: '80+', label: 'Videos Produced' }, { value: '15+', label: 'Clients' }, { value: '24h', label: 'Turnaround' }]
-const processSteps = [{ number: '01', title: 'Concept', description: 'We storyboard and plan the shoot.' }, { number: '02', title: 'Capture', description: 'Professional filming on-site.' }, { number: '03', title: 'Edit', description: 'Fast-paced editing optimised for retention.' }, { number: '04', title: 'Delivery', description: 'Ready-to-post assets within 24-48 hours.' }]
+const mediaItems = [
+  { title: 'Namak Mandi - Content Day', description: '167K views from one shoot' },
+  { title: 'Brand Film Production', description: 'Cinematic storytelling for brands' },
+  { title: 'Social Content Package', description: 'Scroll-stopping reels and shorts' },
+]
 const faqs = [{ question: 'Do you provide models?', answer: 'We can source talent, but we prefer to use real people / staff where possible for authenticity.' }, { question: 'How much does it cost?', answer: 'We have packages starting from £1,500/month for ongoing content.' }, { question: 'Do you travel?', answer: 'Yes, we cover the whole UK. Travel expenses apply outside Glasgow.' }]
 
 export default function VisionPage() {
@@ -38,7 +42,7 @@ export default function VisionPage() {
               Video that converts
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed">
-              Social content, brand films, showreels — produced to perform. We don't just make pretty videos. We make videos that get results.
+              Social content, brand films, showreels - produced to perform. We don't just make pretty videos. We make videos that get results.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Link href="/quiz" className="bg-white text-vision font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">Get a Quote</Link>
@@ -48,22 +52,31 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* Showreel - integrated better */}
-      <section className="relative py-12 px-6">
+      {/* Our Showreel */}
+      <section className="relative py-16 px-6">
         <div className="container-wide relative z-10">
-          <div className="aspect-video bg-black/40 rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-sm shadow-2xl">
-            <div className="text-center text-white/40 font-display font-bold tracking-widest"><p className="text-sm">[SHOWREEL VIDEO EMBED]</p></div>
-          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">Our Showreel</h2>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="aspect-video bg-black/40 rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-sm shadow-2xl relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-vision/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="text-center relative z-10">
+              <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                <svg className="w-8 h-8 text-white/80 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+              <p className="text-white/40 text-sm font-display font-bold uppercase tracking-widest">[SHOWREEL VIDEO]</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-transparent to-black/20">
         <div className="container-wide relative z-10">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What we create</h2></div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What we create</h2></motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
+              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-display font-bold text-white mb-4">{service.title}</h3>
                 <p className="text-white/70 mb-6 leading-relaxed">{service.description}</p>
                 <div className="w-full h-px bg-white/10 mb-6"></div>
@@ -77,7 +90,7 @@ export default function VisionPage() {
       {/* Work */}
       <section id="work" className="relative py-24 px-6 bg-black/20">
         <div className="container-wide relative z-10">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Recent work</h2></div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Recent work</h2></motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             <WorkCard title="Restaurant Content Day" client="Namak Mandi" category="vision" metric="167K views" imagePlaceholder="" />
             <WorkCard title="Product Launch" client="Wee Drop" category="vision" imagePlaceholder="" />
@@ -88,11 +101,17 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Recent Productions */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-black/20 to-black/40">
         <div className="container-wide relative z-10">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">How it works</h2></div>
-          <ProcessTimeline steps={processSteps} variant="dark" />
+          <div className="text-center mb-16">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Recent Productions</motion.h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {mediaItems.map((item) => (
+              <MediaCard key={item.title} title={item.title} description={item.description} />
+            ))}
+          </div>
         </div>
       </section>
 

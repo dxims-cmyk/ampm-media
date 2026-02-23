@@ -34,8 +34,8 @@ export default function AboutPage() {
           <h2 className="font-display text-3xl sm:text-4xl text-chocolate mb-8">The story</h2>
           <div className="space-y-6 text-chocolate/80">
             <p>I started AM:PM because I was tired of seeing businesses waste money on agencies that prioritized awards over outcomes.</p>
-            <p>Before AM:PM, I was designing apps, building brands, and creating content — often all for the same client. I&apos;d start with a logo project and end up as Head Designer on a full product build.</p>
-            <p>That&apos;s what AM:PM is. Four divisions — Impact, Vision, Studio, Creative — under one roof. Based in Glasgow, working with ambitious brands everywhere.</p>
+            <p>Before AM:PM, I was designing apps, building brands, and creating content - often all for the same client. I&apos;d start with a logo project and end up as Head Designer on a full product build.</p>
+            <p>That&apos;s what AM:PM is. Four divisions - Impact, Vision, Studio, Creative - under one roof. Based in Glasgow, working with ambitious brands everywhere.</p>
           </div>
           <div className="mt-8 pt-8 border-t border-chocolate/10">
             <p className="text-chocolate font-semibold">Colm</p>
@@ -87,7 +87,7 @@ export default function AboutPage() {
       <section className="bg-navy-deep section-padding">
         <div className="container-wide max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-ivory mb-6">Let&apos;s work together</h2>
-          <p className="text-lg text-ivory/70 mb-8">If you&apos;re looking for a partner — not just a vendor — let&apos;s talk.</p>
+          <p className="text-lg text-ivory/70 mb-8">If you&apos;re looking for a partner - not just a vendor - let&apos;s talk.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/quiz" className="btn-primary">See If We&apos;re a Fit</Link>
             <Link href="/contact" className="btn-secondary">Get in Touch</Link>

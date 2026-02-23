@@ -18,7 +18,7 @@ export function MusicPlayer() {
       setIsPlaying(true)
       setHasInteracted(true)
     }).catch(() => {
-      // Browser blocked autoplay — listen for first interaction
+      // Browser blocked autoplay - listen for first interaction
       const handleFirstInteraction = () => {
         if (audioRef.current && !hasInteracted) {
           setHasInteracted(true)

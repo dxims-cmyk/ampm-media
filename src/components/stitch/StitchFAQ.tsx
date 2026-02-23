@@ -16,7 +16,7 @@ export const StitchFAQ = ({ items }: StitchFAQProps) => {
     const [openIndex, setOpenIndex] = useState<number | null>(0)
 
     return (
-        <section className="bg-[#070D17] py-24 px-6 border-t border-white/5">
+        <section className="py-24 px-6 border-t border-white/5">
             <div className="max-w-3xl mx-auto">
                 <h2 className="font-display font-bold text-3xl md:text-5xl text-center text-[#F5F5DC] mb-16">Common Questions</h2>
 

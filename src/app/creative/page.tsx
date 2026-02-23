@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ScarcityBadge, ProcessTimeline, ProofTile } from '@/components/ui'
+import { ScarcityBadge, ProofTile, MediaCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
@@ -9,7 +9,11 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, tra
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 
 const stats = [{ value: '335K+', label: 'Views generated' }, { value: '+9%', label: 'Avg monthly growth' }, { value: '15%', label: 'New audience reach' }, { value: '100%', label: 'Client retention' }]
-const processSteps = [{ number: '01', title: 'Discovery', description: 'We audit your presence and identify quick wins.' }, { number: '02', title: 'Strategy', description: 'Custom content + ads blueprint for your business.' }, { number: '03', title: 'Execution', description: 'We produce, post, and optimise. You focus on business.' }, { number: '04', title: 'Scale', description: 'Monthly reviews and continuous improvement.' }]
+const mediaItems = [
+  { title: 'Wee Drop - Brand Identity', description: 'Full visual identity from concept to delivery' },
+  { title: 'AM:PM Media - Rebrand', description: 'Our own brand refresh in action' },
+  { title: 'Client Showcase', description: 'Design systems that scale' },
+]
 const faqs = [{ question: 'How long until I see results?', answer: 'Most clients see increased engagement within the first month. Meaningful business results typically start around month 2-3.' }, { question: 'What do I need to provide?', answer: 'Access to your social accounts, 2-3 hours per month for content capture, and responsiveness on WhatsApp for approvals.' }, { question: 'Do you lock me into a long contract?', answer: "We require a 3-month minimum. After that, it's month-to-month. We keep clients because we deliver results." }]
 
 export default function CreativePage() {
@@ -45,7 +49,7 @@ export default function CreativePage() {
       {/* Selected Work */}
       <section id="work" className="relative py-24 px-6 bg-black/20">
         <div className="container-wide">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Selected Work</h2></div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Selected Work</h2></motion.div>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <ProofTile metric="Full Brand" label="Identity & App Design" client="Wee Drop" imagePlaceholder="" featured />
             <ProofTile metric="Website" label="Design & Development" client="Wee Drop" imagePlaceholder="" />
@@ -55,11 +59,18 @@ export default function CreativePage() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Design in Motion - Showreel */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-black/20 to-black/40">
         <div className="container-wide">
-          <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">How it works</h2></div>
-          <ProcessTimeline steps={processSteps} variant="dark" />
+          <div className="text-center mb-16">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Design in Motion</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-white/60 max-w-xl mx-auto">See how our design process comes to life.</motion.p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {mediaItems.map((item) => (
+              <MediaCard key={item.title} title={item.title} description={item.description} />
+            ))}
+          </div>
         </div>
       </section>
 

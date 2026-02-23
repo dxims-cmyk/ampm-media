@@ -34,6 +34,7 @@ const config: Config = {
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
         display: ['Manrope', 'sans-serif'],
         signature: ['var(--font-signature)', 'cursive'],
+        dancing: ['var(--font-dancing)', 'cursive'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

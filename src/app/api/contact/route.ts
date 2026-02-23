@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(formData),
     })
   } catch {
-    // Still return success — we've verified the human
+    // Still return success - we've verified the human
   }
 
   return NextResponse.json({ success: true, score: verifyData.score })

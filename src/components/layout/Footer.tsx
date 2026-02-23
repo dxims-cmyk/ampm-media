@@ -10,18 +10,18 @@ export function Footer() {
   const pathname = usePathname()
 
   const getFooterBranding = () => {
-    if (pathname === '/impact') return { text: 'AM:PM Impact', color: 'text-impact' }
-    if (pathname === '/vision') return { text: 'AM:PM Vision', color: 'text-vision' }
-    if (pathname === '/creative') return { text: 'AM:PM Creative', color: 'text-creative' }
-    if (pathname === '/studio') return { text: 'AM:PM Studio', color: 'text-studio' }
-    return { text: 'AM:PM Media', color: 'text-[#F5F5DC]' }
+    if (pathname === '/impact') return { prefix: ':', name: 'Impact', color: 'text-impact' }
+    if (pathname === '/vision') return { prefix: ':', name: 'Vision', color: 'text-vision' }
+    if (pathname === '/creative') return { prefix: ':', name: 'Creative', color: 'text-creative' }
+    if (pathname === '/studio') return { prefix: ':', name: 'Studio', color: 'text-studio' }
+    return { prefix: '', name: 'AM:PM Media', color: 'text-[#F5F5DC]' }
   }
 
   const branding = getFooterBranding()
 
   return (
     <footer className="bg-[#0C1220] border-t border-[#F5F5DC]/10">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="container-wide py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,11 +34,12 @@ export function Footer() {
             <Link href="/" className="inline-flex flex-col gap-2 mb-4 group">
               <div className="flex items-center gap-3">
                 <img src="/icon-192.png" alt="AM:PM Media" className="w-10 h-10 rounded-lg" />
-                <span className={`text-2xl sm:text-4xl md:text-5xl font-display font-bold ${branding.color} transition-colors duration-300`}>
-                  {branding.text}
+                <span className="text-2xl sm:text-4xl md:text-5xl font-display font-bold transition-colors duration-300">
+                  {branding.prefix && <span className="text-white">{branding.prefix}</span>}
+                  <span className={branding.color}>{branding.name}</span>
                 </span>
               </div>
-              <span className="font-signature text-lg sm:text-2xl md:text-3xl text-[#F5F5DC] group-hover:text-white transition-colors">
+              <span className="font-dancing text-lg sm:text-2xl md:text-3xl text-[#F5F5DC] group-hover:text-white transition-colors">
                 Creating Around The Clock
               </span>
             </Link>
