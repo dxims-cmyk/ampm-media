@@ -37,7 +37,7 @@ export const OperatingPrinciples = () => {
         <section className="py-24 px-6">
             <div className="max-w-7xl mx-auto">
                 <h2 className="font-display font-bold text-3xl md:text-4xl mb-12 text-center md:text-left text-[#F5F5DC]">Our Operating Principles</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                     {principles.map((p, i) => (
                         <motion.div
                             key={i}
@@ -45,7 +45,7 @@ export const OperatingPrinciples = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className="p-8 border border-white/10 rounded-xl hover:border-camel/50 transition-colors bg-[#132035] group"
+                            className="p-5 md:p-8 border border-white/10 rounded-xl hover:border-camel/50 transition-colors bg-[#132035] group"
                         >
                             <div className="w-12 h-12 bg-camel/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-camel group-hover:text-white transition-colors text-camel">
                                 {p.icon}

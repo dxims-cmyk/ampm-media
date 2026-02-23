@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/shadcn/toaster'
 import { FloatingNav } from '@/components/layout/FloatingNav'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/providers/ScrollToTop'
+import { MusicPlayer } from '@/components/ui/MusicPlayer'
 
 import './globals.css'
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <Toaster />
+        <MusicPlayer />
       </body>
     </html>
   )

@@ -27,7 +27,7 @@ export default function CreativePage() {
               <ScarcityBadge text="3 spots left for February" variant="light" />
             </motion.div>
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
-            <motion.h1 variants={fadeUp} className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
               :Creative
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl sm:text-2xl text-white/90 mb-2 font-medium">

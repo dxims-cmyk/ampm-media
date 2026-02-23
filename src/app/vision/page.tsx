@@ -29,7 +29,7 @@ export default function VisionPage() {
         <div className="container-wide relative z-10 py-32">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
-            <motion.h1 variants={fadeUp} className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
               :Vision
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl text-white/90 mb-2 font-medium">
@@ -61,7 +61,7 @@ export default function VisionPage() {
           <div className="text-center mb-16"><h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What we create</h2></div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, i) => (
-              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
+              <motion.div key={service.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 rounded-2xl p-5 md:p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm">
                 <h3 className="text-2xl font-display font-bold text-white mb-4">{service.title}</h3>
                 <p className="text-white/70 mb-6 leading-relaxed">{service.description}</p>
                 <div className="w-full h-px bg-white/10 mb-6"></div>

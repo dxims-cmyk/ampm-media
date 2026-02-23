@@ -53,8 +53,8 @@ export default function HomePage() {
           className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none mix-blend-overlay"
         />
 
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-camel/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-vision/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-1/4 left-1/4 w-48 md:w-96 h-48 md:h-96 bg-camel/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-32 md:w-64 h-32 md:h-64 bg-vision/20 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.p
@@ -71,7 +71,7 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-display font-extrabold text-5xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter mb-8 text-[#F5F5DC]"
+            className="font-display font-extrabold text-4xl sm:text-5xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter mb-8 text-[#F5F5DC]"
           >
             CREATING<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">AROUND</span><br />
@@ -182,7 +182,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ScarcityBadge text="Only 3 Spots Left for February" variant="light" />
 
-          <h2 className="font-display font-black text-white text-5xl md:text-7xl mb-6 tracking-tighter mt-8">
+          <h2 className="font-display font-black text-white text-3xl sm:text-5xl md:text-7xl mb-6 tracking-tighter mt-8">
             STOP GUESSING.
           </h2>
           <p className="text-white/90 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-light">

@@ -29,7 +29,7 @@ export const StitchDivisions = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.1 }}
-                                className="group relative h-[400px] overflow-hidden rounded-2xl"
+                                className="group relative h-[280px] sm:h-[340px] md:h-[400px] overflow-hidden rounded-2xl"
                             >
                                 <Link href={div.href} className="block h-full w-full relative">
                                     {/* Video Layer (Default View) */}
@@ -50,7 +50,7 @@ export const StitchDivisions = () => {
                                     <div className="absolute inset-0 bg-[#0C1220] -z-10" />
 
                                     {/* Content Container */}
-                                    <div className="relative h-full p-8 flex flex-col justify-between z-10 pointer-events-none">
+                                    <div className="relative h-full p-5 md:p-8 flex flex-col justify-between z-10 pointer-events-none">
                                         {/* Top: Tag & Number */}
                                         <div className="flex justify-between items-start">
                                             <span className="text-white/40 text-xs font-bold uppercase tracking-widest border border-white/10 px-3 py-1 rounded-full group-hover:border-white/30 group-hover:text-white transition-colors">
@@ -65,7 +65,7 @@ export const StitchDivisions = () => {
 
                                         {/* Middle: Big Text */}
                                         <div>
-                                            <h3 className="text-white font-display text-5xl md:text-7xl font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-lg">
+                                            <h3 className="text-white font-display text-3xl sm:text-4xl md:text-7xl font-bold mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-lg">
                                                 :{div.name}
                                             </h3>
                                             <p className="text-white/80 text-lg font-medium opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
@@ -75,7 +75,7 @@ export const StitchDivisions = () => {
                                     </div>
 
                                     {/* Decorative Giant Letter */}
-                                    <div className="absolute -bottom-10 -right-10 text-[15rem] font-display font-black text-white/5 leading-none pointer-events-none group-hover:text-white/10 transition-colors duration-500 group-hover:scale-110">
+                                    <div className="absolute -bottom-10 -right-10 text-[8rem] md:text-[15rem] font-display font-black text-white/5 leading-none pointer-events-none group-hover:text-white/10 transition-colors duration-500 group-hover:scale-110">
                                         {div.name.charAt(0)}
                                     </div>
                                 </Link>

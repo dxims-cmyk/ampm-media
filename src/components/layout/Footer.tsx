@@ -28,15 +28,15 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-4 gap-12"
+          className="grid md:grid-cols-4 gap-8 md:gap-12"
         >
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-flex flex-col gap-2 mb-4 group">
-              <span className={`text-4xl md:text-5xl font-display font-bold ${branding.color} transition-colors duration-300`}>
+              <span className={`text-2xl sm:text-4xl md:text-5xl font-display font-bold ${branding.color} transition-colors duration-300`}>
                 {branding.text}
               </span>
-              <span className="font-signature text-2xl md:text-3xl text-[#F5F5DC] group-hover:text-white transition-colors">
+              <span className="font-signature text-lg sm:text-2xl md:text-3xl text-[#F5F5DC] group-hover:text-white transition-colors">
                 Creating Around The Clock
               </span>
             </Link>

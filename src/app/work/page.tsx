@@ -64,9 +64,9 @@ export default function WorkPage() {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <span className="inline-block px-3 py-1 bg-white/20 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-6">Featured Case Study</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Glasgow Bar & Nightlife</h2>
-              <p className="text-5xl sm:text-6xl font-bold text-white/90 mb-2">140K</p>
+              <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white/90 mb-2">140K</p>
               <p className="text-xl text-white/70 mb-6">views in January 2025</p>
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8">
                 <div className="bg-white/10 rounded-xl p-4 text-center">
                   <p className="text-2xl font-bold text-white">+9%</p>
                   <p className="text-white/60 text-sm">MoM Growth</p>

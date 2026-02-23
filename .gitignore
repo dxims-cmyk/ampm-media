@@ -29,3 +29,6 @@ next-env.d.ts
 
 # build log
 build_log.txt
+
+.vercel
+.env*.local
