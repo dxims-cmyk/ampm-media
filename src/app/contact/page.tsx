@@ -24,6 +24,15 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [csrfToken, setCsrfToken] = useState('')
+
+  // H2: Fetch CSRF token on mount
+  useEffect(() => {
+    fetch('/api/csrf')
+      .then(res => res.json())
+      .then(data => setCsrfToken(data.csrfToken))
+      .catch(() => {})
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -54,6 +63,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           recaptchaToken: token,
+          csrfToken,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -71,10 +81,10 @@ export default function ContactPage() {
 
       setSubmitted(true)
     } catch {
-      setError('Verification failed. Please try again.')
+      setError('Something went wrong. Please try again.')
     }
     setIsSubmitting(false)
-  }, [formData])
+  }, [formData, csrfToken])
 
   const inputClass = "w-full px-4 py-3 rounded-lg border border-[#2A1E1A]/20 focus:border-impact focus:ring-2 focus:ring-impact/20 outline-none transition-all text-[#2A1E1A] placeholder:text-[#2A1E1A]/40 bg-white"
 

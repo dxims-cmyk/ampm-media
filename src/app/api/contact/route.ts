@@ -14,6 +14,7 @@ const contactSchema = z.object({
   message: z.string().max(2000).optional().or(z.literal('')),
   source: z.string().max(100).optional().or(z.literal('')),
   recaptchaToken: z.string().min(1, 'reCAPTCHA token required'),
+  csrfToken: z.string().min(1, 'CSRF token required'),
 })
 
 // --- H1: In-memory rate limiting (5 requests per IP per minute) ---
@@ -70,7 +71,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Validation failed', fields: errors }, { status: 400 })
   }
 
-  const { recaptchaToken, ...formData } = result.data
+  const { recaptchaToken, csrfToken, ...formData } = result.data
+
+  // --- H2: CSRF double-submit cookie validation ---
+  const cookieToken = req.cookies.get('csrf_token')?.value
+  if (!cookieToken || cookieToken !== csrfToken) {
+    return NextResponse.json({ error: 'Invalid CSRF token' }, { status: 403 })
+  }
 
   // Verify reCAPTCHA v3 token with Google
   const secret = process.env.RECAPTCHA_SECRET_KEY
@@ -86,7 +93,8 @@ export async function POST(req: NextRequest) {
 
   const verifyData = await verifyRes.json()
 
-  if (!verifyData.success || verifyData.score < 0.5) {
+  // --- H3: Verify reCAPTCHA action matches expected value ---
+  if (!verifyData.success || verifyData.score < 0.5 || verifyData.action !== 'contact_form') {
     return NextResponse.json({ error: 'Verification failed' }, { status: 403 })
   }
 

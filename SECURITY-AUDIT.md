@@ -239,11 +239,11 @@ These packages are dev-only and not bundled into the Next.js build.
 - [x] **H1**: In-memory rate limiting — 5 req/min per IP, 429 response
 - [x] **H4**: Webhook URL moved to `IMPACT_WEBHOOK_URL` env var
 
-### Priority 2 — NOT YET APPLIED
-- [ ] **H2**: Add CSRF protection (Origin header check)
-- [ ] **H3**: Verify reCAPTCHA action name server-side
+### Priority 2 — FIXED
+- [x] **H2**: CSRF protection via double-submit cookie pattern (`/api/csrf` generates token + httpOnly cookie, `/api/contact` validates match)
+- [x] **H3**: reCAPTCHA action verified server-side (`action !== 'contact_form'` rejected)
 
-### Priority 3 — FIXED (commit TBD)
+### Priority 3 — FIXED (commit `eab698a`)
 - [x] **M1**: Supabase already uses env vars (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`). RLS audit is external to codebase.
 - [x] **M2**: reCAPTCHA site key moved to `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` env var
 - [x] **M3**: GA ID moved to `NEXT_PUBLIC_GA_ID` env var (conditionally loaded)
@@ -258,4 +258,4 @@ These packages are dev-only and not bundled into the Next.js build.
 
 ---
 
-*Report generated 2026-02-24. Last updated 2026-02-24 after applying all patches.*
+*Report generated 2026-02-24. All findings resolved. Audit complete.*
