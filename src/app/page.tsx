@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { ScarcityBadge } from '@/components/ui'
+import { IdlePopup } from '@/components/ui/IdlePopup'
 import { ClientMarquee } from '@/components/ui/ClientMarquee'
 import { Marquee } from '@/components/stitch/Marquee'
 import { OperatingPrinciples } from '@/components/stitch/OperatingPrinciples'
@@ -203,6 +204,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Idle Popup - 45s trigger */}
+      <IdlePopup
+        idleTimeout={45000}
+        heading="Let's build something"
+        subheading="Take our 2-minute quiz to find the right service for your goals."
+        ctaText="Start the Quiz"
+        ctaHref="/quiz"
+        dismissText="Just looking"
+        storageKey="ampm-idle-home"
+      />
     </>
   )
 }

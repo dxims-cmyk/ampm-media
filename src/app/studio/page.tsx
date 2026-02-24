@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ScarcityBadge, MediaCard } from '@/components/ui'
+import { IdlePopup } from '@/components/ui/IdlePopup'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 import { ClientMarquee } from '@/components/ui/ClientMarquee'
@@ -225,6 +226,17 @@ export default function StudioPage() {
           </div>
         </div>
       </section>
+
+      {/* Idle Popup - 45s trigger */}
+      <IdlePopup
+        idleTimeout={45000}
+        heading="Ready to record?"
+        subheading="Book your studio session now - limited slots available each week."
+        ctaText="Book a Session"
+        ctaHref="#book"
+        dismissText="Just browsing"
+        storageKey="ampm-idle-studio"
+      />
     </div>
   )
 }

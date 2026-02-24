@@ -1,8 +1,9 @@
 'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ScarcityBadge, MediaCard } from '@/components/ui'
+import { ScarcityBadge, MediaCard, TestimonialVideoCard } from '@/components/ui'
 import { ClientMarquee } from '@/components/ui/ClientMarquee'
+import { IdlePopup } from '@/components/ui/IdlePopup'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 import { ROICalculator } from '@/components/impact/ROICalculator'
 
@@ -61,6 +62,38 @@ export default function ImpactPage() {
               <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Book a Demo</Link>
               <Link href="#roi-calculator" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Calculate Your ROI</Link>
             </motion.div>
+
+            {/* Social Proof Stats Bar */}
+            <motion.div variants={fadeUp} className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
+                <span className="text-2xl font-display font-bold text-white">5s</span>
+                <div className="text-left">
+                  <p className="text-white/90 text-xs font-bold uppercase tracking-wider">Response Time</p>
+                  <p className="text-white/50 text-[10px]">Industry avg: 47 hours</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
+                <span className="text-2xl font-display font-bold text-white">78%</span>
+                <div className="text-left">
+                  <p className="text-white/90 text-xs font-bold uppercase tracking-wider">Higher Close Rate</p>
+                  <p className="text-white/50 text-[10px]">vs manual follow-up</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
+                <span className="text-2xl font-display font-bold text-white">3x</span>
+                <div className="text-left">
+                  <p className="text-white/90 text-xs font-bold uppercase tracking-wider">More Qualified Leads</p>
+                  <p className="text-white/50 text-[10px]">AI-scored & prioritised</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* REVIEW BADGES - Uncomment when ready:
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap items-center gap-4">
+              <img src="/images/google-reviews-badge.svg" alt="Google Reviews" className="h-10" />
+              <img src="/images/trustpilot-badge.svg" alt="Trustpilot" className="h-10" />
+            </motion.div>
+            */}
           </motion.div>
         </div>
       </section>
@@ -138,6 +171,33 @@ export default function ImpactPage() {
             <MediaCard title="Namak Mandi - 167K Views" description="Restaurant went viral with our content system. 167K views in 30 days." />
             <MediaCard title="Palais Bar - 140K/month" description="Ongoing growth system delivering 140K views monthly with +9% MoM growth." />
             <MediaCard title="Your Business?" description="This spot could be yours. Book an audit to see what's possible." />
+          </div>
+        </div>
+      </section>
+
+      {/* 6b. VIDEO TESTIMONIALS */}
+      <section className="relative py-24 px-6 bg-gradient-to-b from-black/30 to-black/35">
+        <div className="container-wide">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Hear from our clients</h2>
+            <p className="text-white/60 max-w-xl mx-auto">Real business owners sharing real results.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <TestimonialVideoCard
+              quote="The speed-to-lead system changed everything. We went from losing enquiries to booking 3x more clients in the first month."
+              name="Restaurant Owner"
+              business="Namak Mandi, Glasgow"
+            />
+            <TestimonialVideoCard
+              quote="We were posting content but getting nothing back. AM:PM built us a system that actually converts followers into customers."
+              name="Bar Manager"
+              business="Glasgow Nightlife Venue"
+            />
+            <TestimonialVideoCard
+              quote="The dashboard alone is worth it. I can see exactly where every lead comes from and what's converting."
+              name="Business Owner"
+              business="Glasgow Business"
+            />
           </div>
         </div>
       </section>
@@ -258,6 +318,16 @@ export default function ImpactPage() {
           </div>
         </div>
       </section>
+
+      {/* Idle Popup - 30s trigger */}
+      <IdlePopup
+        idleTimeout={30000}
+        heading="Still thinking?"
+        subheading="Book a free audit and we'll show you exactly where your growth is hiding."
+        ctaText="Book Free Audit"
+        ctaHref="https://cal.com/ampmedia/30min"
+        storageKey="ampm-idle-impact"
+      />
     </div>
   )
 }
