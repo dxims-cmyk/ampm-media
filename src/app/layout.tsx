@@ -75,8 +75,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         founder: { '@type': 'Person', name: 'Colm', jobTitle: 'Founder & Creative Director' },
         knowsAbout: ['Content Marketing', 'Video Production', 'Branding', 'Social Media Management', 'Meta Ads', 'Recording Studio'],
       }) }} />
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-9NG235YVT5" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-9NG235YVT5');`}</Script>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy="afterInteractive" />
+          <Script id="google-analytics" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}</Script>
+        </>
+      )}
       <body className="font-body bg-navy text-white antialiased overflow-x-hidden selection:bg-camel selection:text-white">
         <ScrollToTop />
         <FloatingNav />

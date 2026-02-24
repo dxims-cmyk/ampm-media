@@ -7,10 +7,12 @@ const contactSchema = z.object({
   email: z.string().email('Invalid email address').max(254),
   phone: z.string().min(7).max(20).optional().or(z.literal('')),
   business: z.string().max(200).optional().or(z.literal('')),
+  company: z.string().max(200).optional().or(z.literal('')),
   service: z.enum(['growth-system', 'video', 'studio', 'branding', 'other'], {
     error: 'Invalid service selection',
   }),
   message: z.string().max(2000).optional().or(z.literal('')),
+  source: z.string().max(100).optional().or(z.literal('')),
   recaptchaToken: z.string().min(1, 'reCAPTCHA token required'),
 })
 

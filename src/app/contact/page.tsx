@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Script from 'next/script'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
 
-const RECAPTCHA_SITE_KEY = '6LeCfnUsAAAAAIujA7LTtNbnqC71vVdxDPNdYirt'
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
