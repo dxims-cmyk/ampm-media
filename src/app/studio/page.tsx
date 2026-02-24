@@ -34,9 +34,9 @@ const pricing = [
   { name: 'Recording 1hr', price: '£40', calUrl: 'https://cal.com/ampmedia/studio-1hr' },
   { name: 'Recording 3hr', price: '£100', calUrl: 'https://cal.com/ampmedia/studio-session-3hr' },
   { name: 'Recording 5hr', price: '£150', calUrl: 'https://cal.com/ampmedia/studio-session-5hr' },
-  { name: 'Photography Studio 1hr', price: '£40', calUrl: 'https://cal.com/ampmedia/studio-1hr' },
-  { name: 'Photography Studio Half Day', price: '£120', calUrl: 'https://cal.com/ampmedia/studio-1hr' },
-  { name: 'Studio Rental per hour', price: '£30', calUrl: 'https://cal.com/ampmedia/studio-1hr' },
+  { name: 'Photography Studio 1hr', price: '£40', calUrl: 'https://cal.com/ampmedia/30min' },
+  { name: 'Photography Studio Half Day', price: '£120', calUrl: 'https://cal.com/ampmedia/30min' },
+  { name: 'Studio Rental per hour', price: '£30', calUrl: 'https://cal.com/ampmedia/30min' },
 ]
 
 const artists = [
@@ -363,7 +363,7 @@ export default function StudioPage() {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 }}>
                 <a
-                  href="https://cal.com/ampmedia/studio-1hr"
+                  href="https://cal.com/ampmedia/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-studio font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide"
