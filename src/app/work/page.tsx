@@ -27,11 +27,11 @@ const categories: { value: Category; label: string }[] = [
 
 const projects = [
   // Glasgow Bar & Nightlife (Palais - anonymous)
-  { title: 'Social Media Management', client: 'Glasgow Bar & Nightlife', category: 'impact' as const, metric: '140K views/month', imagePlaceholder: '[IMAGE: Bar content]' },
-  { title: 'Content Strategy', client: 'Glasgow Bar & Nightlife', category: 'impact' as const, metric: '+9% MoM growth', imagePlaceholder: '[IMAGE: Analytics dashboard]' },
+  { title: 'Social Media Management', client: 'Glasgow Bar & Nightlife', category: 'impact' as const, metric: '140K views/month', imagePlaceholder: '[IMAGE: Bar content]', caseStudy: true },
+  { title: 'Content Strategy', client: 'Glasgow Bar & Nightlife', category: 'impact' as const, metric: '+9% MoM growth', imagePlaceholder: '[IMAGE: Analytics dashboard]', caseStudy: true },
   { title: 'Short-Form Content', client: 'Glasgow Bar & Nightlife', category: 'vision' as const, metric: '8 reels/month', imagePlaceholder: '[IMAGE: Reel screenshot]' },
   // Namak Mandi
-  { title: 'Growth System', client: 'Namak Mandi', category: 'impact' as const, metric: '167K views', imagePlaceholder: '[IMAGE: Namak Mandi]' },
+  { title: 'Growth System', client: 'Namak Mandi', category: 'impact' as const, metric: '167K views', imagePlaceholder: '[IMAGE: Namak Mandi]', caseStudy: true },
   { title: 'TikTok Content', client: 'Namak Mandi', category: 'vision' as const, metric: '27.8K views', imagePlaceholder: '[IMAGE: Namak Mandi video]' },
   // Wee Drop
   { title: 'Full App Design', client: 'Wee Drop', category: 'creative' as const, metric: 'Head Designer', imagePlaceholder: '[IMAGE: Wee Drop app]' },
@@ -135,7 +135,14 @@ export default function WorkPage() {
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {filteredProjects.map((project, i) => (
-                <WorkCard key={`${project.client}-${project.title}-${i}`} {...project} />
+                <div key={`${project.client}-${project.title}-${i}`} className="relative">
+                  <WorkCard {...project} />
+                  {'caseStudy' in project && project.caseStudy && (
+                    <Link href="/impact#case-studies" className="absolute top-4 right-4 z-10 px-3 py-1.5 bg-impact text-white text-xs font-bold uppercase tracking-wider rounded-full hover:bg-impact/80 transition-colors shadow-lg">
+                      View Results
+                    </Link>
+                  )}
+                </div>
               ))}
             </motion.div>
           </AnimatePresence>

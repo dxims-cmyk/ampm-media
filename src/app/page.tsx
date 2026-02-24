@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { ScarcityBadge } from '@/components/ui'
+import { ClientMarquee } from '@/components/ui/ClientMarquee'
 import { Marquee } from '@/components/stitch/Marquee'
 import { OperatingPrinciples } from '@/components/stitch/OperatingPrinciples'
 import { StitchDivisions } from '@/components/stitch/StitchDivisions'
@@ -173,6 +174,9 @@ export default function HomePage() {
 
       {/* 5. FAQ */}
       <StitchFAQ items={faqs} />
+
+      {/* Client Marquee */}
+      <ClientMarquee title="Trusted By" />
 
       {/* ============================================
           FINAL CTA

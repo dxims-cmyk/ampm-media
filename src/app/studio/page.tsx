@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ScarcityBadge, MediaCard } from '@/components/ui'
 import { StitchStats } from '@/components/stitch/StitchStats'
 import { StitchFAQ } from '@/components/stitch/StitchFAQ'
+import { ClientMarquee } from '@/components/ui/ClientMarquee'
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
@@ -206,6 +207,9 @@ export default function StudioPage() {
 
       {/* FAQ */}
       <StitchFAQ items={faqs} />
+
+      {/* Client Marquee */}
+      <ClientMarquee title="We've Worked With" />
 
       {/* CTA */}
       <section className="relative py-32 px-6 overflow-hidden">
