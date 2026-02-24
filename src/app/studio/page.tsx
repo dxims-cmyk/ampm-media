@@ -210,7 +210,7 @@ export default function StudioPage() {
       <StitchFAQ items={faqs} />
 
       {/* Client Marquee */}
-      <ClientMarquee title="We've Worked With" />
+      <ClientMarquee items={['RAH', 'Dxims', 'Jamalco', 'AI Markez']} />
 
       {/* CTA */}
       <section className="relative py-32 px-6 overflow-hidden">

@@ -1,16 +1,15 @@
 'use client'
 import { motion } from 'framer-motion'
 
-const clients = [
-  'RAH', 'AI Markez', 'Dxims', 'Namak Mandi', 'Palais Bar', 'Wee Drop', 'Jamalco',
-  'RAH', 'AI Markez', 'Dxims', 'Namak Mandi', 'Palais Bar', 'Wee Drop', 'Jamalco',
-]
-
 interface ClientMarqueeProps {
-  title?: string
+  items: string[]
+  label?: string
 }
 
-export function ClientMarquee({ title = 'Trusted By' }: ClientMarqueeProps) {
+export function ClientMarquee({ items, label = "We've Worked With" }: ClientMarqueeProps) {
+  // Duplicate to fill the marquee
+  const duplicated = [...items, ...items]
+
   return (
     <section className="py-16 border-t border-white/5">
       <div className="container-wide overflow-hidden">
@@ -20,7 +19,7 @@ export function ClientMarquee({ title = 'Trusted By' }: ClientMarqueeProps) {
           viewport={{ once: true }}
           className="text-center text-white/50 text-xs font-bold uppercase tracking-[0.1em] mb-4"
         >
-          {title}
+          {label}
         </motion.p>
         <div
           className="relative group"
@@ -30,7 +29,7 @@ export function ClientMarquee({ title = 'Trusted By' }: ClientMarqueeProps) {
           }}
         >
           <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
-            {clients.map((name, i) => (
+            {duplicated.map((name, i) => (
               <span
                 key={i}
                 className="flex-shrink-0 text-lg sm:text-xl md:text-2xl font-display font-bold text-white/70 whitespace-nowrap"

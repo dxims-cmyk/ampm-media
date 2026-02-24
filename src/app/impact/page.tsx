@@ -12,20 +12,38 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 
 const features = [
   { icon: '🎯', title: 'AI Lead Scoring', description: 'Every enquiry scored and prioritised automatically based on intent signals and engagement data.' },
-  { icon: '💬', title: 'WhatsApp Alerts', description: 'Instant notifications the moment a lead comes in. Respond in under 5 minutes, every time.' },
-  { icon: '📊', title: 'Client Dashboard', description: 'Real-time analytics, lead tracking, and campaign performance all in one place.' },
-  { icon: '⚡', title: 'Auto-Response', description: 'Automated email follow-ups ensure no lead goes cold while you prepare your pitch.' },
-  { icon: '📅', title: 'Calendar Integration', description: 'Leads book directly into your calendar. No back-and-forth. No friction.' },
-  { icon: '📱', title: 'Multi-Channel', description: 'Capture leads from Meta, TikTok, Google, your website, and more - all in one system.' },
+  { icon: '📞', title: 'AI Receptionist', description: '24/7 phone answering that qualifies callers, answers FAQs, and books appointments - even at 3am.' },
+  { icon: '💬', title: 'AI SMS/WhatsApp Responder', description: 'Instant auto-replies that feel human. Qualifies leads and keeps conversations warm while you focus.' },
+  { icon: '⚡', title: '5-Second Alerts', description: 'WhatsApp, SMS, and email notifications the moment a lead comes in. Never miss another enquiry.' },
+  { icon: '📅', title: 'Smart Booking', description: 'Cal.com and Calendly integration. Leads book directly into your calendar with zero friction.' },
+  { icon: '📊', title: 'Dashboard & CRM', description: 'Pipeline management, lead notes, history, and tags. Plus HubSpot sync for enterprise teams.' },
+  { icon: '💳', title: 'Payments & Deposits', description: 'Stripe integration for booking deposits and upfront payments. Get paid before you show up.' },
+  { icon: '🧾', title: 'Accounting Sync', description: 'Xero and QuickBooks auto-invoicing. Every payment tracked, every invoice sent automatically.' },
 ]
 
-const integrations = [
-  { name: 'Meta', status: 'connected' },
-  { name: 'TikTok', status: 'connected' },
-  { name: 'Google', status: 'connected' },
-  { name: 'WhatsApp', status: 'connected' },
-  { name: 'Cal.com', status: 'connected' },
-  { name: 'Zapier', status: 'coming' },
+const integrationGroups = [
+  { label: 'Lead Sources', items: [
+    { name: 'Meta', status: 'connected' },
+    { name: 'TikTok', status: 'connected' },
+    { name: 'Google', status: 'connected' },
+    { name: 'WhatsApp', status: 'connected' },
+  ]},
+  { label: 'AI & Automation', items: [
+    { name: 'Claude', status: 'connected' },
+    { name: 'Zapier', status: 'connected' },
+  ]},
+  { label: 'Booking & Calendar', items: [
+    { name: 'Cal.com', status: 'connected' },
+    { name: 'Calendly', status: 'coming' },
+  ]},
+  { label: 'Business Tools', items: [
+    { name: 'Xero', status: 'coming' },
+    { name: 'QuickBooks', status: 'coming' },
+    { name: 'Stripe', status: 'coming' },
+    { name: 'GoCardless', status: 'coming' },
+    { name: 'HubSpot', status: 'coming' },
+    { name: 'Mailchimp', status: 'coming' },
+  ]},
 ]
 
 const faqs = [
@@ -145,7 +163,7 @@ export default function ImpactPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Everything you need to grow</h2>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors backdrop-blur-sm">
                 <span className="text-3xl mb-4 block">{feature.icon}</span>
@@ -202,22 +220,76 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      {/* AI RECEPTIONIST HIGHLIGHT */}
+      <section className="relative py-24 px-6 bg-black/35">
+        <div className="container-wide max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <span className="inline-block px-3 py-1 bg-white/10 text-white text-xs font-bold uppercase tracking-wider rounded-full mb-6">New Feature</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Never miss another call</h2>
+              <p className="text-lg text-white/60 mb-8 leading-relaxed">Your AI receptionist answers 24/7, qualifies leads, and books appointments - even at 3am.</p>
+              <div className="space-y-4 mb-8">
+                {[
+                  { point: 'Answers in a natural voice', desc: 'Callers won\'t know it\'s AI' },
+                  { point: 'Asks qualifying questions', desc: 'Filters tyre-kickers from real leads' },
+                  { point: 'Books directly to your calendar', desc: 'Zero friction, zero admin' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <div>
+                      <p className="text-white font-medium">{item.point}</p>
+                      <p className="text-white/50 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">
+                Hear It In Action
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+              <div className="aspect-square bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                <div className="text-center p-8">
+                  <div className="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-12 h-12 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  </div>
+                  <p className="text-white/40 text-sm font-display font-bold uppercase tracking-widest">[DEMO AUDIO / VIDEO]</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* 7. INTEGRATIONS */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-black/30 to-black/40">
-        <div className="container-wide max-w-4xl mx-auto">
+        <div className="container-wide max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Connects with your stack</h2>
           </motion.div>
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
-            {integrations.map((int, i) => (
-              <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-6 text-center relative">
-                <p className="text-white font-display font-bold text-sm sm:text-base mb-2">{int.name}</p>
-                <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${int.status === 'connected' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white/10 text-white/40'}`}>
-                  {int.status === 'connected' ? 'Connected' : 'Coming Soon'}
-                </span>
-              </motion.div>
+          <div className="space-y-8">
+            {integrationGroups.map((group, gi) => (
+              <div key={gi}>
+                <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">{group.label}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
+                  {group.items.map((int, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                      <p className="text-white font-display font-bold text-sm mb-2">{int.name}</p>
+                      <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${int.status === 'connected' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white/10 text-white/40'}`}>
+                        {int.status === 'connected' ? 'Connected' : 'Coming Soon'}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
+        </div>
+
+        {/* Integrations Marquee */}
+        <div className="mt-16">
+          <ClientMarquee items={['Meta', 'TikTok', 'Google', 'WhatsApp', 'Claude', 'Cal.com', 'Calendly', 'Zapier', 'Xero', 'QuickBooks', 'Stripe', 'GoCardless', 'HubSpot', 'Mailchimp']} label="Integrates With" />
         </div>
       </section>
 
@@ -234,7 +306,7 @@ export default function ImpactPage() {
               <h3 className="text-4xl font-display font-bold text-white mb-1">£1,500<span className="text-lg text-white/50">/month</span></h3>
               <p className="text-white/50 text-sm mb-8">The system. You handle content.</p>
               <ul className="space-y-3 mb-8">
-                {['Lead management dashboard', 'AI lead scoring', 'WhatsApp instant alerts', 'Auto-response emails', 'Calendar integration', 'Monthly performance reports'].map((item, i) => (
+                {[':Impact Dashboard & CRM', 'AI Lead Scoring', 'AI Receptionist (24/7 calls)', 'AI SMS/WhatsApp Responder', '5-Second Lead Alerts', 'Cal.com/Calendly Booking', 'Meta, TikTok, Google Integration', 'Zapier Connection', 'Xero/Stripe Integration'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
                     <svg className="w-4 h-4 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                     {item}
@@ -251,7 +323,7 @@ export default function ImpactPage() {
               <h3 className="text-4xl font-display font-bold text-white mb-1">£2,500<span className="text-lg text-white/50">/month</span></h3>
               <p className="text-white/50 text-sm mb-8">System + AM:PM content team.</p>
               <ul className="space-y-3 mb-8">
-                {['Everything in SaaS Only', 'Content strategy & production', 'Meta ads management', 'Dedicated account manager', 'Monthly content days', 'Unlimited revisions'].map((item, i) => (
+                {['Everything in SaaS Only', 'AM:PM Content Team', 'Monthly Content Creation', 'Strategy Calls', 'Priority Support', 'HubSpot/CRM Migration Help'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
                     <svg className="w-4 h-4 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                     {item}
@@ -293,6 +365,9 @@ export default function ImpactPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Client Marquee - Lead Gen Clients */}
+      <ClientMarquee items={['Namak Mandi', 'Palais Bar', 'Wee Drop']} />
 
       {/* 10. FAQ */}
       <section className="relative py-24 px-6 bg-black/50">

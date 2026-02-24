@@ -125,7 +125,7 @@ export default function VisionPage() {
       </section>
 
       {/* Client Marquee */}
-      <ClientMarquee title="We've Worked With" />
+      <ClientMarquee items={['Namak Mandi', 'Palais Bar']} />
 
       {/* CTA */}
       <section className="relative py-32 px-6 overflow-hidden">

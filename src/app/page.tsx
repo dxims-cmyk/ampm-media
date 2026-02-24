@@ -177,7 +177,10 @@ export default function HomePage() {
       <StitchFAQ items={faqs} />
 
       {/* Client Marquee */}
-      <ClientMarquee title="Trusted By" />
+      <ClientMarquee items={['RAH', 'AI Markez', 'Dxims', 'Namak Mandi', 'Palais Bar', 'Wee Drop', 'Jamalco']} />
+
+      {/* Integrations Marquee */}
+      <ClientMarquee items={['Meta', 'TikTok', 'Google', 'WhatsApp', 'Claude', 'Cal.com', 'Calendly', 'Zapier', 'Xero', 'Stripe', 'HubSpot', 'Mailchimp']} label="Powered By & Integrates With" />
 
       {/* ============================================
           FINAL CTA
