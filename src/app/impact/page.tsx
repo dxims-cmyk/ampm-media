@@ -132,6 +132,30 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      {/* CONTENT THAT PERFORMS */}
+      <section className="relative py-24 px-6 bg-black/20">
+        <div className="container-wide max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Content that performs</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">Namak Mandi went from 33K views in January to 213K in February. That&apos;s what happens when we take over.</p>
+          </motion.div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { value: '548%', label: 'Growth', sub: 'Namak Mandi in 15 days' },
+              { value: '213K', label: 'Views', sub: 'February (up from 33K)' },
+              { value: '70%', label: 'Non-Followers', sub: 'New audience reached' },
+              { value: '13', label: 'Reels/Week', sub: 'Consistency wins' },
+            ].map((stat, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-sm hover:bg-white/10 transition-colors">
+                <p className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-1">{stat.value}</p>
+                <p className="text-white/90 text-sm font-bold uppercase tracking-wider mb-1">{stat.label}</p>
+                <p className="text-white/40 text-xs">{stat.sub}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 3. HOW IT WORKS */}
       <section id="how-it-works" className="relative py-24 px-6 bg-black/20">
         <div className="container-wide">
