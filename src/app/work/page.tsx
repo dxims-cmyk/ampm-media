@@ -73,6 +73,8 @@ const contentProjects = [
   { title: 'TikTok Content', client: 'Namak Mandi', category: 'vision' as const, metric: '27.8K views' },
   { title: 'Short-Form Content', client: 'Glasgow Bar & Nightlife', category: 'vision' as const, metric: '8 reels/month' },
   { title: 'Brand Content', client: 'Wee Drop', category: 'vision' as const },
+  { title: 'Content Creation & Edits', client: 'Obera Beauty & Spa', category: 'creative' as const },
+  { title: 'Sales & Growth Strategy', client: 'Obera Beauty & Spa', category: 'impact' as const },
 ]
 
 export default function WorkPage() {
