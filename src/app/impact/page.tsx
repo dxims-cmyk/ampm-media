@@ -34,15 +34,17 @@ const integrationGroups = [
   ]},
   { label: 'Booking & Calendar', items: [
     { name: 'Cal.com', status: 'connected' },
-    { name: 'Calendly', status: 'coming' },
+    { name: 'Calendly', status: 'connected' },
+  ]},
+  { label: 'Messaging', items: [
+    { name: 'Email', status: 'connected' },
+    { name: 'Instagram DM', status: 'connected' },
+    { name: 'Messenger', status: 'connected' },
   ]},
   { label: 'Business Tools', items: [
     { name: 'Xero', status: 'coming' },
-    { name: 'QuickBooks', status: 'coming' },
     { name: 'Stripe', status: 'coming' },
-    { name: 'GoCardless', status: 'coming' },
     { name: 'HubSpot', status: 'coming' },
-    { name: 'Mailchimp', status: 'coming' },
   ]},
 ]
 

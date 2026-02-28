@@ -30,7 +30,7 @@ const weDropJourney = [
   { step: 2, title: 'App v2 design', division: ':Creative', color: 'bg-creative' },
   { step: 3, title: 'First website', division: ':Creative', color: 'bg-creative' },
   { step: 4, title: 'Content creation', division: ':Vision', color: 'bg-vision' },
-  { step: 5, title: 'Marketing & leads', division: ':Impact', color: 'bg-impact', comingSoon: true },
+  { step: 5, title: 'Marketing & leads', division: ':Impact', color: 'bg-impact' },
 ]
 
 const faqs = [
@@ -162,31 +162,29 @@ export default function CreativePage() {
             <p className="text-white/60 max-w-2xl mx-auto">We build sites that look stunning AND drive results. Every site integrates with :Impact for lead capture.</p>
           </motion.div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <motion.a
-              href="https://dxims.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={fadeUp}
-              whileHover={{ y: -4 }}
-              className="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm p-8 group transition-colors hover:bg-white/[0.08]"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs uppercase tracking-wider text-white/40 font-bold">Live Showcase</span>
-                <span className="text-white/40 group-hover:text-white/70 transition-colors">&rarr;</span>
-              </div>
-              <h3 className="text-2xl font-display font-bold text-white mb-2">dxims.co.uk</h3>
-              <p className="text-white/60 leading-relaxed">Full design and build. Fast, responsive, conversion-ready.</p>
-            </motion.a>
-
-            <motion.div
-              variants={fadeUp}
-              className="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm p-8 flex flex-col items-center justify-center text-center"
-            >
-              <span className="text-white/20 text-4xl mb-3">+</span>
-              <p className="text-white/40 font-medium">Your site could be here</p>
-              <p className="text-white/30 text-sm mt-1">More client sites launching soon</p>
-            </motion.div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { href: 'https://wee-drop.co.uk', title: 'wee-drop.co.uk', desc: 'Delivery app website & full app design. Glasgow-based, connecting locals with vendors.' },
+              { href: 'https://dxims.co.uk', title: 'dxims.co.uk', desc: 'Artist website with streaming, tour dates, merch shop, and video gallery.' },
+              { href: 'https://www.mediampm.com', title: 'mediampm.com', desc: 'AM:PM Media agency site. Next.js, Framer Motion, dark luxury aesthetic.' },
+            ].map((site) => (
+              <motion.a
+                key={site.href}
+                href={site.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={fadeUp}
+                whileHover={{ y: -4 }}
+                className="bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm p-8 group transition-colors hover:bg-white/[0.08]"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs uppercase tracking-wider text-white/40 font-bold">Live Showcase</span>
+                  <span className="text-white/40 group-hover:text-white/70 transition-colors">&rarr;</span>
+                </div>
+                <h3 className="text-xl font-display font-bold text-white mb-2">{site.title}</h3>
+                <p className="text-white/60 leading-relaxed text-sm">{site.desc}</p>
+              </motion.a>
+            ))}
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mt-12">
@@ -223,7 +221,7 @@ export default function CreativePage() {
                       <h3 className="text-lg font-display font-bold text-white">{item.title}</h3>
                       <span className={`text-xs font-bold px-3 py-1 rounded-full ${item.color} text-white`}>
                         {item.division}
-                        {item.comingSoon && <span className="ml-1 opacity-70">(coming soon)</span>}
+                        {(item as { comingSoon?: boolean }).comingSoon && <span className="ml-1 opacity-70">(coming soon)</span>}
                       </span>
                     </div>
                   </div>
