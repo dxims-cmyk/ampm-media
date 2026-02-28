@@ -67,14 +67,14 @@ const categories: { value: Category; label: string }[] = [
 ]
 
 const contentProjects = [
-  { title: 'Social Media Management', client: 'Glasgow Bar & Nightlife', category: 'impact' as const, metric: '140K views/month' },
-  { title: 'Content Strategy', client: 'Glasgow Bar & Nightlife', category: 'impact' as const, metric: '+9% MoM growth' },
-  { title: 'Growth System', client: 'Namak Mandi', category: 'impact' as const, metric: '167K views' },
+  { title: 'Social Media Management', client: 'Glasgow Bar & Nightlife', category: 'vision' as const, metric: '140K views/month' },
+  { title: 'Content Strategy', client: 'Glasgow Bar & Nightlife', category: 'creative' as const, metric: '+9% MoM growth' },
+  { title: 'Content & Growth', client: 'Namak Mandi', category: 'vision' as const, metric: '167K views' },
   { title: 'TikTok Content', client: 'Namak Mandi', category: 'vision' as const, metric: '27.8K views' },
   { title: 'Short-Form Content', client: 'Glasgow Bar & Nightlife', category: 'vision' as const, metric: '8 reels/month' },
   { title: 'Brand Content', client: 'Wee Drop', category: 'vision' as const },
   { title: 'Content Creation & Edits', client: 'Obera Beauty & Spa', category: 'creative' as const },
-  { title: 'Sales & Growth Strategy', client: 'Obera Beauty & Spa', category: 'impact' as const },
+  { title: 'Sales & Growth Strategy', client: 'Obera Beauty & Spa', category: 'creative' as const },
 ]
 
 export default function WorkPage() {
