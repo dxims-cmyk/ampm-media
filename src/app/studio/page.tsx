@@ -45,25 +45,24 @@ const pricing = [
 const artists = [
   {
     name: 'RAH',
-    spotify: 'https://open.spotify.com/artist/RAH',
-    instagram: 'https://instagram.com/rah',
+    instagram: 'https://instagram.com/datguy.rah',
   },
   {
     name: 'Dxims',
-    spotify: 'https://open.spotify.com/artist/Dxims',
+    spotify: 'https://open.spotify.com/artist/2CbnfeLerfYftYHQ02PJeG',
     instagram: 'https://instagram.com/dxims',
     tiktok: 'https://tiktok.com/@dxims',
     website: 'https://dxims.co.uk',
   },
   {
     name: 'Jamalco',
-    spotify: 'https://open.spotify.com/artist/Jamalco',
-    instagram: 'https://instagram.com/jamalco',
+    spotify: 'https://open.spotify.com/artist/6CVzqkETzQydL7X3ye11rs',
+    instagram: 'https://instagram.com/j.amalco',
   },
   {
     name: 'AI Markez',
-    spotify: 'https://open.spotify.com/artist/AIMarkez',
     instagram: 'https://instagram.com/aimarkez',
+    tiktok: 'https://tiktok.com/@aimarkez',
   },
 ]
 
@@ -441,9 +440,11 @@ export default function StudioPage() {
 
                 {/* Social links */}
                 <div className="flex items-center justify-center gap-3">
-                  <a href={artist.spotify} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#1DB954] transition-colors" aria-label={`${artist.name} on Spotify`}>
-                    <SpotifyIcon />
-                  </a>
+                  {artist.spotify && (
+                    <a href={artist.spotify} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#1DB954] transition-colors" aria-label={`${artist.name} on Spotify`}>
+                      <SpotifyIcon />
+                    </a>
+                  )}
                   <a href={artist.instagram} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#E4405F] transition-colors" aria-label={`${artist.name} on Instagram`}>
                     <InstagramIcon />
                   </a>
