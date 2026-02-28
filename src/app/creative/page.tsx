@@ -284,7 +284,7 @@ export default function CreativePage() {
       </section>
 
       {/* ───────────── CLIENT MARQUEE ───────────── */}
-      <ClientMarquee items={['Namak Mandi', 'Wee Drop']} />
+      <ClientMarquee items={['Namak Mandi', 'Wee Drop', 'Obera Beauty & Spa']} />
 
       {/* ───────────── CTA ───────────── */}
       <section className="relative py-32 px-6 overflow-hidden">

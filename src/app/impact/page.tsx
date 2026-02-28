@@ -393,7 +393,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Client Marquee - Lead Gen Clients */}
-      <ClientMarquee items={['Namak Mandi', 'Palais Bar', 'Wee Drop']} />
+      <ClientMarquee items={['Namak Mandi', 'Palais Bar', 'Wee Drop', 'Obera Beauty & Spa']} />
 
       {/* 10. FAQ */}
       <section className="relative py-24 px-6 bg-black/50">

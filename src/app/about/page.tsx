@@ -102,7 +102,7 @@ export default function AboutPage() {
       </section>
 
       {/* Client Marquee */}
-      <ClientMarquee items={['RAH', 'AI Markez', 'Dxims', 'Namak Mandi', 'Palais Bar', 'Wee Drop', 'Jamalco']} />
+      <ClientMarquee items={['RAH', 'AI Markez', 'Dxims', 'Namak Mandi', 'Palais Bar', 'Wee Drop', 'Jamalco', 'Obera Beauty & Spa']} />
 
       {/* 3. COMPANY STORY */}
       <section className="bg-ivory section-padding">
