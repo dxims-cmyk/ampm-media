@@ -58,12 +58,13 @@ const portfolioProjects = [
   },
 ]
 
-type Category = 'all' | 'impact' | 'creative' | 'vision'
+type Category = 'all' | 'impact' | 'creative' | 'vision' | 'studio'
 const categories: { value: Category; label: string }[] = [
   { value: 'all', label: 'All Work' },
   { value: 'impact', label: ':Impact' },
   { value: 'creative', label: ':Creative' },
   { value: 'vision', label: ':Vision' },
+  { value: 'studio', label: ':Studio' },
 ]
 
 const contentProjects = [
@@ -75,6 +76,11 @@ const contentProjects = [
   { title: 'Brand Content', client: 'Wee Drop', category: 'vision' as const },
   { title: 'Content Creation & Edits', client: 'Obera Beauty & Spa', category: 'creative' as const },
   { title: 'Sales & Growth Strategy', client: 'Obera Beauty & Spa', category: 'creative' as const },
+  { title: 'Recording, Mixing & Mastering', client: 'RAH', category: 'studio' as const },
+  { title: 'Recording, Mixing & Mastering', client: 'Jamalco', category: 'studio' as const },
+  { title: 'Recording, Mixing & Mastering', client: 'AI Markez', category: 'studio' as const },
+  { title: 'Recording, Mixing & Mastering', client: 'Dxims', category: 'studio' as const, metric: 'BBC Introducing' },
+  { title: 'Recording, Mixing & Mastering', client: 'AI Markez', category: 'studio' as const, metric: 'BBC Introducing' },
 ]
 
 export default function WorkPage() {
@@ -276,10 +282,10 @@ export default function WorkPage() {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className={`px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full ${
-                      project.category === 'impact'
-                        ? 'bg-impact/20 text-red-300'
-                        : project.category === 'vision'
-                          ? 'bg-vision/20 text-blue-300'
+                      project.category === 'vision'
+                        ? 'bg-vision/20 text-blue-300'
+                        : project.category === 'studio'
+                          ? 'bg-studio/20 text-emerald-300'
                           : 'bg-creative/20 text-amber-300'
                     }`}>
                       :{project.category}
