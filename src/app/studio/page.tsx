@@ -46,6 +46,7 @@ const artists = [
   {
     name: 'RAH',
     instagram: 'https://instagram.com/datguy.rah',
+    youtube: 'https://www.youtube.com/watch?v=EZJPQSg6WI0',
   },
   {
     name: 'Dxims',
@@ -104,6 +105,12 @@ const TikTokIcon = () => (
 const GlobeIcon = () => (
   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-4.247m0 0A8.966 8.966 0 013 12c0-1.257.26-2.453.727-3.418" />
+  </svg>
+)
+
+const YouTubeIcon = () => (
+  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
   </svg>
 )
 
@@ -451,6 +458,11 @@ export default function StudioPage() {
                   {artist.tiktok && (
                     <a href={artist.tiktok} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors" aria-label={`${artist.name} on TikTok`}>
                       <TikTokIcon />
+                    </a>
+                  )}
+                  {artist.youtube && (
+                    <a href={artist.youtube} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#FF0000] transition-colors" aria-label={`${artist.name} on YouTube`}>
+                      <YouTubeIcon />
                     </a>
                   )}
                   {artist.website && (
