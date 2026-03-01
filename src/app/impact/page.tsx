@@ -139,15 +139,15 @@ export default function ImpactPage() {
       <section className="relative py-24 px-6 bg-black/20">
         <div className="container-wide max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Content that performs</h2>
-            <p className="text-white/60 max-w-2xl mx-auto">Namak Mandi went from 33K views in January to 213K in February. That&apos;s what happens when we take over.</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Speed wins deals</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">78% of buyers choose the first business to respond. :Impact makes sure that&apos;s you.</p>
           </motion.div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { value: '548%', label: 'Growth', sub: 'Namak Mandi in 15 days' },
-              { value: '213K', label: 'Views', sub: 'February (up from 33K)' },
-              { value: '70%', label: 'Non-Followers', sub: 'New audience reached' },
-              { value: '13', label: 'Reels/Week', sub: 'Consistency wins' },
+              { value: '5s', label: 'Alert Speed', sub: 'Enquiry to WhatsApp' },
+              { value: '100%', label: 'Capture Rate', sub: 'No lead left behind' },
+              { value: '24/7', label: 'Always On', sub: 'AI qualifies instantly' },
+              { value: '1', label: 'Inbox', sub: 'Every channel, one place' },
             ].map((stat, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-sm hover:bg-white/10 transition-colors">
                 <p className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-1">{stat.value}</p>
@@ -209,13 +209,13 @@ export default function ImpactPage() {
       <section id="case-studies" className="relative py-24 px-6 bg-black/30">
         <div className="container-wide">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Real results. Real businesses.</h2>
-            <p className="text-white/60 max-w-xl mx-auto">See what :Impact has done for businesses like yours.</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Built for businesses that run on leads</h2>
+            <p className="text-white/60 max-w-xl mx-auto">Restaurants, clinics, estate agents, salons — if leads drive your revenue, :Impact is for you.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
-            <MediaCard title="Namak Mandi - 167K Views" description="Restaurant went viral with our content system. 167K views in 30 days." />
-            <MediaCard title="Palais Bar - 140K/month" description="Ongoing growth system delivering 140K views monthly with +9% MoM growth." />
-            <MediaCard title="Your Business?" description="This spot could be yours. Book an audit to see what's possible." />
+            <MediaCard title="Hospitality" description="Never miss a table booking or event enquiry again. WhatsApp alerts the moment someone reaches out." />
+            <MediaCard title="Healthcare & Beauty" description="Appointment requests scored and routed instantly. Know who to call first." />
+            <MediaCard title="Your Business?" description="This spot could be yours. Book a demo to see what's possible." />
           </div>
         </div>
       </section>
@@ -229,9 +229,9 @@ export default function ImpactPage() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             <TestimonialVideoCard
-              quote="The speed-to-lead system changed everything. We went from losing enquiries to booking 3x more clients in the first month."
+              quote="The speed-to-lead system is a game changer. Getting a WhatsApp the second someone enquires means we never miss an opportunity."
               name="Restaurant Owner"
-              business="Namak Mandi, Glasgow"
+              business="Glasgow Hospitality"
             />
             <TestimonialVideoCard
               quote="We were posting content but getting nothing back. AM:PM built us a system that actually converts followers into customers."

@@ -20,7 +20,7 @@ const caseStudies = [
       { value: '70%', label: 'Non-Followers Reached' },
       { value: '13', label: 'Reels Per Week' },
     ],
-    services: [':Vision - Content Creation', ':Vision - Social Strategy', ':Impact - Lead Management'],
+    services: [':Vision - Content Creation', ':Vision - Social Strategy'],
     color: 'vision',
     status: 'live',
   },
