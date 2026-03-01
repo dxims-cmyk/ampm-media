@@ -158,6 +158,38 @@ export default function HomePage() {
       </section>
 
       {/* ============================================
+          IMPACT PRODUCT CALLOUT
+          ============================================ */}
+      <section className="py-16 md:py-20 px-6 bg-gradient-to-r from-[#E44F2A]/10 to-[#E44F2A]/5 border-y border-[#E44F2A]/10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col lg:flex-row items-center justify-between gap-8"
+          >
+            <div className="flex-1">
+              <p className="text-[#E44F2A] text-xs font-bold uppercase tracking-widest mb-3">Our Lead Management Platform</p>
+              <h3 className="font-display font-bold text-2xl md:text-3xl text-[#F5F5DC] mb-3">
+                <span className="text-[#E44F2A]">:</span>Impact — Stop Losing Leads You Paid For
+              </h3>
+              <p className="text-[#F5F5DC]/60 text-base max-w-xl">
+                WhatsApp alerts in 5 seconds. AI lead scoring. Unified inbox for WhatsApp, SMS, email, Instagram &amp; Messenger. The lead management platform built by AM:PM Media.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-[#E44F2A] text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-[#d44525] transition-all hover:-translate-y-1 text-center whitespace-nowrap">
+                Visit driveimpact.io
+              </Link>
+              <Link href="/impact" className="border border-[#E44F2A]/40 text-[#E44F2A] px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-[#E44F2A]/10 transition-all hover:-translate-y-1 text-center whitespace-nowrap">
+                Learn More
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============================================
           STITCH COMPONENTS (Visual Upgrade)
           ============================================ */}
 

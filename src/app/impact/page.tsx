@@ -80,7 +80,7 @@ export default function ImpactPage() {
               Content strategy, Meta ads, lead management, and instant notifications - all in one platform. Stop losing leads to slow response times.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Learn More</Link>
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Try :Impact Platform</Link>
               <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Book a Demo</Link>
             </motion.div>
 
@@ -340,7 +340,7 @@ export default function ImpactPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Get Started</Link>
+              <Link href="https://driveimpact.io/demo" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Get Started</Link>
             </motion.div>
 
             {/* Full Service */}
