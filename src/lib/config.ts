@@ -263,6 +263,7 @@ export const launchingSoonDivisions = divisions.filter(d => d.status === 'launch
 // Navigation links for the simple top nav (matching Webflow site)
 export const navLinks = [
   { name: 'Work', href: '/work' },
+  { name: 'Results', href: '/case-studies' },
   { name: ':Creative', href: '/creative' },
   { name: ':Vision', href: '/vision' },
   { name: ':Studio', href: '/studio' },

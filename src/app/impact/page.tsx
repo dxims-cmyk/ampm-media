@@ -65,22 +65,23 @@ export default function ImpactPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
         <div className="container-wide relative z-10 py-32">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl">
-            <motion.div variants={fadeUp} className="mb-6">
+            <motion.div variants={fadeUp} className="mb-6 flex flex-wrap items-center gap-3">
               <ScarcityBadge text="Going private - limited access" variant="light" />
+              <span className="bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-emerald-500/30">Now Available</span>
             </motion.div>
             <motion.p variants={fadeUp} className="text-white/60 text-xs uppercase tracking-wider mb-2 font-bold">AM:PM</motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
               :Impact
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl sm:text-2xl text-white/90 mb-2 font-medium">
-              The growth system that turns content into customers
+              AI-powered lead management for businesses running paid ads
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed">
               Content strategy, Meta ads, lead management, and instant notifications - all in one platform. Stop losing leads to slow response times.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Book a Demo</Link>
-              <Link href="#roi-calculator" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Calculate Your ROI</Link>
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Learn More</Link>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Book a Demo</Link>
             </motion.div>
 
             {/* Social Proof Stats Bar */}

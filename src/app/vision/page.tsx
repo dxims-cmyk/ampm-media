@@ -8,27 +8,55 @@ import { ClientMarquee } from '@/components/ui/ClientMarquee'
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 
-const contentTiers = [
+const services = [
   {
-    title: 'Organic Content',
-    description: 'Social-first content for TikTok, Instagram, YouTube. Shot and edited for engagement.',
-    includes: ['Concept development', 'On-location filming', 'Professional editing', 'Platform optimisation'],
+    title: 'Social Media Content',
+    description: 'Reels, TikToks, Stories - platform-native content shot and edited for maximum engagement.',
+    includes: ['Instagram Reels', 'TikTok content', 'Stories & behind-the-scenes', 'Platform optimisation'],
   },
   {
-    title: 'Content for Ads',
-    description: 'Higher production value. Designed for paid campaigns. Integrates with :Impact.',
-    includes: ['Script writing', 'Storyboarding', 'Full production', 'Colour grading'],
-  },
-  {
-    title: 'Music Videos',
-    description: 'Artist visuals. Performance and narrative.',
-    includes: ['Pre-production planning', 'Full day shoot', 'Professional editing', 'Colour grading'],
+    title: 'Video Production',
+    description: 'Brand films, ad creatives, and testimonial videos that tell your story and sell your product.',
+    includes: ['Brand films', 'Ad creatives', 'Testimonial videos', 'Colour grading'],
   },
   {
     title: 'Photography',
-    badge: 'Coming Soon',
-    description: 'Headshots, product photography, 100m white backdrop studio.',
-    includes: ['Professional lighting', 'White backdrop', 'Same-day delivery', 'Multiple setups'],
+    description: 'Product shots, lifestyle imagery, and professional headshots for your brand.',
+    includes: ['Product photography', 'Lifestyle shoots', 'Professional headshots', 'Multiple setups'],
+  },
+  {
+    title: 'Content Strategy & Scheduling',
+    description: 'We plan your content calendar, post at optimal times, and track what converts.',
+    includes: ['Content calendars', 'Posting schedules', 'Performance tracking', 'Monthly optimisation'],
+  },
+]
+
+const processSteps = [
+  { step: '01', title: 'Discovery Call', description: 'We learn your brand, your audience, and your goals. No fluff, just clarity on what needs to happen.' },
+  { step: '02', title: 'Shoot Day', description: 'We come to your location and batch-produce content. One day of filming = weeks of posts.' },
+  { step: '03', title: 'Edit & Deliver', description: 'Professional editing, colour grading, and captions. Ready-to-post content packs delivered to your inbox.' },
+  { step: '04', title: 'Results', description: 'We track what\'s working, cut what isn\'t, and optimise every month. Content that compounds.' },
+]
+
+const packages = [
+  {
+    name: 'Starter',
+    price: '500',
+    description: 'Get consistent content flowing.',
+    includes: ['Weekly shoot session', '8-12 posts per month', 'Basic editing & captions', 'Content calendar'],
+  },
+  {
+    name: 'Growth',
+    price: '1,000',
+    popular: true,
+    description: 'Scale your presence and engagement.',
+    includes: ['Weekly shoot session', '15-20 posts per month', 'Stories & behind-the-scenes', 'Strategy calls', 'Performance tracking'],
+  },
+  {
+    name: 'Premium',
+    price: '2,000',
+    description: 'Full content team + ads creative.',
+    includes: ['Full content production', 'Ads creative (Meta, TikTok)', 'Photography included', 'Monthly strategy', 'Priority turnaround'],
   },
 ]
 
@@ -41,7 +69,7 @@ const viralStats = [
 
 const faqs = [
   { question: 'Do you provide models?', answer: 'We can source talent, but we prefer to use real people / staff where possible for authenticity.' },
-  { question: 'How much does it cost?', answer: 'We have packages starting from \u00a31,500/month for ongoing content. One-off projects quoted individually.' },
+  { question: 'How much does it cost?', answer: 'Packages start from \u00a3500/month for ongoing content. One-off projects are quoted individually based on scope.' },
   { question: 'Do you travel?', answer: 'Yes, we cover the whole UK. Travel expenses apply outside Glasgow.' },
   { question: "What's the turnaround?", answer: 'Social content: 48-72 hours. Brand films: 1-2 weeks. Content day deliverables: same week.' },
 ]
@@ -62,34 +90,16 @@ export default function VisionPage() {
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-6">
               :Vision
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-xl text-white/90 mb-2 font-medium">
-              Video that converts
+            <motion.p variants={fadeUp} className="text-xl sm:text-2xl text-white/90 mb-2 font-medium">
+              Content That Converts
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed">
-              Social content, brand films, showreels - produced to perform. We don&apos;t just make pretty videos. We make videos that get results.
+              Video, photography, and social content that gets results - not just views. We don&apos;t make pretty videos. We make videos that grow your business.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <Link href="/quiz" className="bg-white text-vision font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide">Get a Quote</Link>
-              <Link href="#work" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide">See Our Work</Link>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-vision font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Book a Discovery Call</Link>
+              <Link href="#packages" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">See Packages</Link>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── SHOWREEL ── */}
-      <section className="relative py-16 px-6">
-        <div className="container-wide relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white">Our Showreel</h2>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="aspect-video bg-black/40 rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-sm shadow-2xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-vision/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="text-center relative z-10">
-              <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                <svg className="w-8 h-8 text-white/80 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
-              <p className="text-white/40 text-sm font-display font-bold uppercase tracking-widest">[SHOWREEL VIDEO]</p>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -117,34 +127,30 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ── WHAT WE CREATE ── */}
+      {/* ── SERVICES ── */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-black/20 to-black/30">
         <div className="container-wide relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">What we create</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">Everything your brand needs to show up, stand out, and convert.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contentTiers.map((tier, i) => (
+            {services.map((service, i) => (
               <motion.div
-                key={tier.title}
+                key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -4 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white/5 rounded-2xl p-5 md:p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm relative"
+                className="bg-white/5 rounded-2xl p-5 md:p-8 hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm"
               >
-                {tier.badge && (
-                  <span className="absolute top-4 right-4 bg-white/15 text-white/90 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/20">
-                    {tier.badge}
-                  </span>
-                )}
-                <h3 className="text-2xl font-display font-bold text-white mb-4">{tier.title}</h3>
-                <p className="text-white/70 mb-6 leading-relaxed">{tier.description}</p>
+                <h3 className="text-2xl font-display font-bold text-white mb-4">{service.title}</h3>
+                <p className="text-white/70 mb-6 leading-relaxed">{service.description}</p>
                 <div className="w-full h-px bg-white/10 mb-6" />
                 <ul className="space-y-3">
-                  {tier.includes.map((item, j) => (
+                  {service.includes.map((item, j) => (
                     <li key={j} className="flex items-center gap-3 text-white/80 text-sm">
                       <svg className="w-4 h-4 text-white/60 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -159,8 +165,80 @@ export default function VisionPage() {
         </div>
       </section>
 
+      {/* ── PROCESS ── */}
+      <section className="relative py-24 px-6 bg-black/30">
+        <div className="container-wide relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">How it works</h2>
+            <p className="text-white/60 max-w-xl mx-auto">From first call to first post in under two weeks.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            {processSteps.map((step, i) => (
+              <motion.div key={step.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="text-center bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-display font-bold text-lg">{step.step}</span>
+                </div>
+                <h3 className="text-xl font-display font-bold text-white mb-3">{step.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PACKAGES ── */}
+      <section id="packages" className="relative py-24 px-6 bg-gradient-to-b from-black/30 to-black/40">
+        <div className="container-wide max-w-5xl mx-auto relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Packages</h2>
+            <p className="text-white/60 max-w-xl mx-auto">Consistent content, predictable pricing. No surprises.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg, i) => (
+              <motion.div
+                key={pkg.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`rounded-2xl p-8 backdrop-blur-sm relative ${pkg.popular ? 'bg-white/10 border-2 border-white/20' : 'bg-white/5 border border-white/10'}`}
+              >
+                {pkg.popular && (
+                  <span className="absolute -top-3 right-6 px-3 py-1 bg-white text-vision text-xs font-bold uppercase tracking-wider rounded-full">Most Popular</span>
+                )}
+                <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">{pkg.name}</p>
+                <h3 className="text-4xl font-display font-bold text-white mb-1">
+                  &pound;{pkg.price}<span className="text-lg text-white/50">/month</span>
+                </h3>
+                <p className="text-white/50 text-sm mb-8">{pkg.description}</p>
+                <ul className="space-y-3 mb-8">
+                  {pkg.includes.map((item, j) => (
+                    <li key={j} className="flex items-center gap-3 text-white/80 text-sm">
+                      <svg className="w-4 h-4 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="https://cal.com/ampmedia/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full font-bold px-8 py-4 rounded-full uppercase tracking-wide text-center transition-all hover:-translate-y-1 ${pkg.popular ? 'bg-white text-vision hover:bg-white/90' : 'border border-white/30 text-white hover:bg-white/10'}`}
+                >
+                  Get Started
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── THE WORK ── */}
-      <section id="work" className="relative py-24 px-6 bg-black/30">
+      <section id="work" className="relative py-24 px-6 bg-black/40">
         <div className="container-wide relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">The work</h2>
@@ -174,42 +252,8 @@ export default function VisionPage() {
         </div>
       </section>
 
-      {/* ── PHOTOGRAPHY COMING SOON ── */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-black/30 to-black/40">
-        <div className="container-wide relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto bg-white/5 border-2 border-white/15 rounded-2xl backdrop-blur-sm p-10 md:p-14 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-            <span className="inline-block bg-white/15 text-white/90 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/20 mb-6">
-              Coming Soon
-            </span>
-
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">Photography Studio</h2>
-
-            <div className="grid sm:grid-cols-3 gap-6 mb-8">
-              <div className="text-center">
-                <p className="text-white/90 font-bold mb-1">White Backdrop</p>
-                <p className="text-white/50 text-sm">100m roll studio</p>
-              </div>
-              <div className="text-center">
-                <p className="text-white/90 font-bold mb-1">Professional Lighting</p>
-                <p className="text-white/50 text-sm">Full setup included</p>
-              </div>
-              <div className="text-center">
-                <p className="text-white/90 font-bold mb-1">All Formats</p>
-                <p className="text-white/50 text-sm">Headshots, product, content</p>
-              </div>
-            </div>
-
-            <Link href="/contact" className="inline-block border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide">
-              Get Notified
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ── CONTENT TO LEADS ── */}
-      <section className="relative py-24 px-6 bg-black/40">
+      <section className="relative py-24 px-6 bg-gradient-to-b from-black/40 to-black/50">
         <div className="container-wide relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto text-center">
             <div className="inline-block bg-[#FF6B35]/10 border border-[#FF6B35]/20 rounded-full px-4 py-1.5 mb-6">
@@ -238,7 +282,7 @@ export default function VisionPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative py-24 px-6 bg-gradient-to-b from-black/40 to-black/50">
+      <section className="relative py-24 px-6 bg-black/50">
         <div className="container-wide max-w-3xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white">Questions</h2>
@@ -257,10 +301,10 @@ export default function VisionPage() {
 
         <div className="container-wide max-w-3xl mx-auto text-center relative z-10">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6">Ready to create?</h2>
-          <p className="text-xl text-white/80 mb-10 font-light">Tell us about your project.</p>
+          <p className="text-xl text-white/80 mb-10 font-light">Book a discovery call and let&apos;s plan your content.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quiz" className="bg-white text-vision font-bold px-10 py-5 rounded-full hover:bg-white/90 transition-all transform hover:-translate-y-1 shadow-lg uppercase tracking-widest">Get Started</Link>
-            <Link href="/contact" className="border border-white text-white font-bold px-10 py-5 rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1 uppercase tracking-widest">Book a Call</Link>
+            <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-vision font-bold px-10 py-5 rounded-full hover:bg-white/90 transition-all transform hover:-translate-y-1 shadow-lg uppercase tracking-widest">Book a Discovery Call</Link>
+            <Link href="/contact" className="border border-white text-white font-bold px-10 py-5 rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1 uppercase tracking-widest">Send a Message</Link>
           </div>
         </div>
       </section>

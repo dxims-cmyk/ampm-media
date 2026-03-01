@@ -167,6 +167,57 @@ export default function HomePage() {
       {/* 2. Bold Stats */}
       <StitchStats stats={stats} />
 
+      {/* 2b. Results / Case Studies */}
+      <section className="py-24 md:py-32 px-6 bg-[#0C1220] border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-camel text-xs font-bold uppercase tracking-widest mb-4"
+              >
+                Proven Results
+              </motion.p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="font-display font-bold text-4xl md:text-5xl text-[#F5F5DC]"
+              >
+                Results That Speak
+              </motion.h2>
+            </div>
+            <Link href="/case-studies" className="text-camel font-bold uppercase tracking-widest hover:text-white transition-colors border-b border-camel hover:border-white pb-1 mt-4 md:mt-0">
+              View All Case Studies
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { value: '548%', label: 'Video View Growth', detail: 'Namak Mandi - 15 days' },
+              { value: '213K', label: 'Monthly Views', detail: 'Up from 33K in one month' },
+              { value: '140K', label: 'Views/Month', detail: 'Palais Bar - ongoing growth' },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -4 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 hover:border-camel/30 transition-all group"
+              >
+                <p className="text-4xl sm:text-5xl font-display font-bold text-[#F5F5DC] mb-2 group-hover:text-camel transition-colors">{stat.value}</p>
+                <p className="text-white/90 font-bold text-sm uppercase tracking-wider mb-1">{stat.label}</p>
+                <p className="text-white/40 text-sm">{stat.detail}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 3. Operating Principles (Existing Stitch-styled) */}
       <OperatingPrinciples />
 
