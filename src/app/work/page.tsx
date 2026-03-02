@@ -27,6 +27,16 @@ const portfolioProjects = [
     services: ['Full-Stack Development', 'UI/UX Design', 'AI Integration', 'API Architecture'],
   },
   {
+    title: 'driveimpact.io',
+    subtitle: 'SaaS Landing Page',
+    description: 'Premium marketing website for the :Impact lead management platform. 3D scroll animations, spotlight hover effects, animated gradient borders, and a dramatic lamp-lit pricing section — all built to convert visitors into demo bookings.',
+    image: '/images/portfolio/driveimpact-landing.png',
+    href: 'https://www.driveimpact.io',
+    category: 'creative' as const,
+    tech: ['Next.js 14', 'Tailwind CSS', 'Framer Motion', 'Aceternity UI'],
+    services: ['Website Design & Build', 'Animation & Motion', 'Conversion Optimisation'],
+  },
+  {
     title: 'Wee Drop',
     subtitle: 'Delivery App & Website',
     description: 'Designed the current version of the Wee Drop delivery app and built their marketing website. Glasgow-based delivery platform connecting customers directly with local vendors at the lowest prices.',

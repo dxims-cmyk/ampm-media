@@ -162,8 +162,9 @@ export default function CreativePage() {
             <p className="text-white/60 max-w-2xl mx-auto">We build sites that look stunning AND drive results. Every site integrates with :Impact for lead capture.</p>
           </motion.div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
+              { href: 'https://www.driveimpact.io', title: 'driveimpact.io', desc: 'SaaS landing page with 3D scroll animations, spotlight effects, and conversion-focused design.' },
               { href: 'https://wee-drop.co.uk', title: 'wee-drop.co.uk', desc: 'Delivery app website & full app design. Glasgow-based, connecting locals with vendors.' },
               { href: 'https://dxims.co.uk', title: 'dxims.co.uk', desc: 'Artist website with streaming, tour dates, merch shop, and video gallery.' },
               { href: 'https://www.mediampm.com', title: 'mediampm.com', desc: 'AM:PM Media agency site. Next.js, Framer Motion, dark luxury aesthetic.' },
