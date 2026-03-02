@@ -22,7 +22,8 @@ const portfolioProjects = [
     description: 'Full-stack SaaS platform with AI lead scoring, unified inbox (WhatsApp, SMS, Email, Instagram, Messenger), speed-to-lead alerts, pipeline management, ROI tracking, and campaign analytics.',
     image: '/images/portfolio/driveimpact.png',
     href: 'https://www.driveimpact.io',
-    category: 'impact' as const,
+    categories: ['impact', 'creative'] as const,
+    primaryCategory: 'impact' as const,
     tech: ['Next.js', 'Supabase', 'Trigger.dev', 'Claude AI', 'Resend', 'Meta API'],
     services: ['Full-Stack Development', 'UI/UX Design', 'AI Integration', 'API Architecture'],
   },
@@ -32,7 +33,8 @@ const portfolioProjects = [
     description: 'Premium marketing website for the :Impact lead management platform. 3D scroll animations, spotlight hover effects, animated gradient borders, and a dramatic lamp-lit pricing section — all built to convert visitors into demo bookings.',
     image: '/images/portfolio/driveimpact-landing.png',
     href: 'https://www.driveimpact.io',
-    category: 'creative' as const,
+    categories: ['creative'] as const,
+    primaryCategory: 'creative' as const,
     tech: ['Next.js 14', 'Tailwind CSS', 'Framer Motion', 'Aceternity UI'],
     services: ['Website Design & Build', 'Animation & Motion', 'Conversion Optimisation'],
   },
@@ -42,7 +44,8 @@ const portfolioProjects = [
     description: 'Designed the current version of the Wee Drop delivery app and built their marketing website. Glasgow-based delivery platform connecting customers directly with local vendors at the lowest prices.',
     image: '/images/portfolio/weedrop-hero.png',
     href: 'https://wee-drop.co.uk',
-    category: 'creative' as const,
+    categories: ['creative'] as const,
+    primaryCategory: 'creative' as const,
     tech: ['App Design', 'Web Development', 'UI/UX'],
     services: ['App Design', 'Website Design & Build', 'Brand Identity'],
   },
@@ -52,7 +55,8 @@ const portfolioProjects = [
     description: 'Full artist website with music streaming integration, tour dates, video gallery, merch shop, and email subscription. Designed for fan engagement and music discovery.',
     image: '/images/portfolio/dxims-hero.png',
     href: 'https://dxims.co.uk',
-    category: 'creative' as const,
+    categories: ['creative'] as const,
+    primaryCategory: 'creative' as const,
     tech: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Spotify API'],
     services: ['Website Design & Build', 'Brand Identity'],
   },
@@ -62,7 +66,8 @@ const portfolioProjects = [
     description: 'Multi-division creative agency site with dark luxury aesthetic, interactive division cards, ROI calculator, quiz flow, and integrated music player. Built to showcase the full AM:PM ecosystem.',
     image: '/images/portfolio/mediampm-hero.png',
     href: 'https://www.mediampm.com',
-    category: 'creative' as const,
+    categories: ['creative'] as const,
+    primaryCategory: 'creative' as const,
     tech: ['Next.js 16', 'Tailwind CSS', 'Framer Motion', 'reCAPTCHA v3'],
     services: ['Website Design & Build', 'Brand System'],
   },
@@ -102,7 +107,7 @@ export default function WorkPage() {
 
   const filteredPortfolio = activeCategory === 'all'
     ? portfolioProjects
-    : portfolioProjects.filter(p => p.category === activeCategory)
+    : portfolioProjects.filter(p => (p.categories as readonly string[]).includes(activeCategory))
 
   return (
     <>
@@ -160,11 +165,11 @@ export default function WorkPage() {
                   {/* Content */}
                   <div className={isReversed ? 'lg:col-start-1' : ''}>
                     <span className={`inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full mb-4 ${
-                      project.category === 'impact'
+                      project.primaryCategory === 'impact'
                         ? 'bg-[#6E0F1A]/20 text-[#e85d6f] border border-[#6E0F1A]/30'
                         : 'bg-[#4A3728]/20 text-[#D4A574] border border-[#4A3728]/30'
                     }`}>
-                      :{project.category === 'impact' ? 'Impact' : 'Creative'}
+                      :{project.primaryCategory === 'impact' ? 'Impact' : 'Creative'}
                     </span>
 
                     <h3 className="text-3xl sm:text-4xl font-bold text-[#F5F5DC] mb-2">{project.title}</h3>
