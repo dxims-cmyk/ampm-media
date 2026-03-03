@@ -6,6 +6,7 @@ import { FloatingNav } from '@/components/layout/FloatingNav'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/providers/ScrollToTop'
 import { MusicPlayer } from '@/components/ui/MusicPlayer'
+import { IntroPreloader } from '@/components/intro-preloader'
 
 import './globals.css'
 
@@ -83,11 +84,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       )}
       <body className="font-body bg-navy text-white antialiased overflow-x-hidden selection:bg-camel selection:text-white">
         <ScrollToTop />
-        <FloatingNav />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <IntroPreloader>
+          <FloatingNav />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </IntroPreloader>
         <Toaster />
         <MusicPlayer />
       </body>
