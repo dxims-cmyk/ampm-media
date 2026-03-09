@@ -1,0 +1,247 @@
+export type DivisionConfig = {
+  slug: string
+  name: string
+  tagline: string
+  description: string
+  accentColor: string
+  heroSubtitle: string
+  vslNote: string
+  checklist: { label: string; detail: string }[]
+  whatToExpect: { title: string; description: string }[]
+  faqs: { question: string; answer: string }[]
+}
+
+const ACCENT = '#C8F04A'
+
+export const divisions: Record<string, DivisionConfig> = {
+  creative: {
+    slug: 'creative',
+    name: 'AM:PM Creative',
+    tagline: 'Design that stops thumbs.',
+    description: 'Brand design, social content, and creative direction.',
+    accentColor: ACCENT,
+    heroSubtitle: 'Your creative session is almost locked in. Complete the steps below before your call.',
+    vslNote: 'Watch this 4-minute breakdown of how we work — your call will make 10x more sense after.',
+    checklist: [
+      { label: 'Watch the video above', detail: 'Understand our creative process before the call' },
+      { label: 'Gather your current brand assets', detail: 'Logos, fonts, colours, any style guides you have — even if they\'re rough' },
+      { label: 'Screenshot 3-5 brands you admire', detail: 'This gives us a visual starting point for your direction' },
+      { label: 'Note what\'s not working right now', detail: 'What feels off about your current visuals? What do you want to fix?' },
+      { label: 'Think about your audience', detail: 'Who are you trying to attract? Age, vibe, platform — the more specific the better' },
+      { label: 'Have your budget range in mind', detail: 'Payment is discussed and taken on the call — know your range so we can tailor the scope' },
+    ],
+    whatToExpect: [
+      { title: 'Discovery Call (30 min)', description: 'We\'ll walk through your brand, your goals, and what you need. This is collaborative — come with questions.' },
+      { title: 'Same-Day Quote', description: 'You\'ll get a clear scope and price within hours of the call. No chasing, no waiting a week.' },
+      { title: '24-Hour Turnaround on Most Work', description: 'Once approved, we move fast. Social assets, ad creatives, and one-off designs typically delivered next day.' },
+      { title: 'Revisions Welcome', description: 'You get revision rounds built into every project. We don\'t stop until you\'re proud of it.' },
+      { title: 'Final Delivery', description: 'All files in every format you need — PNG, SVG, PDF, Figma links. Organised and ready to use.' },
+    ],
+    faqs: [
+      { question: 'How fast is turnaround really?', answer: 'Most single deliverables (social posts, ad creatives, one-pagers) are delivered within 24 hours of approval. Larger projects like full brand identities follow a phased timeline we agree on together.' },
+      { question: 'Do I pay on the call?', answer: 'Yes — we discuss scope and pricing live on the call, and if you\'re happy to proceed, payment is taken there and then. This lets us start immediately with no back-and-forth.' },
+      { question: 'What if I don\'t like the first draft?', answer: 'Every project includes revision rounds. We welcome feedback — the goal is work you\'re genuinely proud of. We\'ll keep refining until we get there.' },
+      { question: 'Can I request changes after delivery?', answer: 'Absolutely. Minor tweaks after delivery are included. If the scope changes significantly, we\'ll quote a fair addition — no surprises.' },
+      { question: 'Do you work with businesses outside Glasgow?', answer: 'Yes. Most of our creative work is done remotely. We work with clients across the UK and internationally.' },
+      { question: 'What do I actually get at the end?', answer: 'You\'ll receive all final files in the formats you need — PNG, SVG, PDF, Figma, whatever applies. Everything organised in a shared folder.' },
+      { question: 'I already have a brand — can you just do social content?', answer: 'Of course. Many clients come to us just for ongoing social content, ad creatives, or campaign-specific design work. We adapt to what you need.' },
+      { question: 'What if I need to cancel or reschedule?', answer: 'No problem — just give us at least 24 hours\' notice and we\'ll rebook you. Life happens.' },
+      { question: 'Is there a minimum spend?', answer: 'We\'ll discuss this on the call based on your needs. We\'re flexible, but we don\'t do cheap throwaway work — everything we produce is portfolio-grade.' },
+      { question: 'Why should I pick AM:PM over a freelancer?', answer: 'Speed, consistency, and range. You get a full creative team — design, motion, copy, strategy — without managing five freelancers. And we actually reply to messages.' },
+    ],
+  },
+
+  impact: {
+    slug: 'impact',
+    name: 'AM:PM Impact',
+    tagline: 'Leads that actually close.',
+    description: 'Paid ads, lead generation, and marketing automation.',
+    accentColor: ACCENT,
+    heroSubtitle: 'Your onboarding call is almost booked. Complete these steps so we can hit the ground running.',
+    vslNote: 'Watch this 6-minute walkthrough of how Impact works — you\'ll see exactly what month 1 looks like.',
+    checklist: [
+      { label: 'Watch the video above', detail: 'See the full onboarding and lead flow before your call' },
+      { label: 'Know your current ad spend (if any)', detail: 'Monthly budget on Meta, Google, or any other platform — even if it\'s £0 right now' },
+      { label: 'Have access to your Meta Business Suite', detail: 'We\'ll need admin access to your ad account and page during onboarding' },
+      { label: 'Think about your ideal customer', detail: 'Who are your best clients? What do they have in common? Location, age, industry?' },
+      { label: 'Prepare your offer', detail: 'What\'s the thing you\'re selling? What makes it worth buying? What\'s the price point?' },
+      { label: 'Note any past marketing that worked (or didn\'t)', detail: 'Knowing what\'s been tried helps us skip dead ends and double down on what works' },
+    ],
+    whatToExpect: [
+      { title: 'Onboarding Call (45 min)', description: 'We map your offer, audience, and goals. You\'ll leave with a clear plan for your first campaign.' },
+      { title: 'Dashboard Access Within 48 Hours', description: 'You\'ll get login details for your Impact Engine dashboard — where every lead, conversation, and metric lives.' },
+      { title: 'First Ads Live Within 7 Days', description: 'We build your creatives, write the copy, set up targeting, and launch. You approve everything before it goes live.' },
+      { title: 'Leads Arrive via WhatsApp', description: 'When someone fills out your ad form, you get an instant WhatsApp notification with their details. Speed to lead wins deals.' },
+      { title: 'Month 1: Learning & Optimising', description: 'The first 2-4 weeks are about data. We test audiences, creatives, and offers — then scale what works. Expect results to compound from week 3+.' },
+      { title: 'Monthly Reporting', description: 'You\'ll see exactly where every pound went, how many leads came in, and what your cost per lead is. Full transparency.' },
+    ],
+    faqs: [
+      { question: 'How much should I spend on ads?', answer: 'We recommend a minimum of £500/month ad spend to get meaningful data. Most clients see best results at £1,000-£2,500/month. This is separate from our management fee.' },
+      { question: 'How quickly will I see leads?', answer: 'Most campaigns generate leads within the first 48-72 hours of going live. Quality and volume improve over the first 2-4 weeks as we optimise.' },
+      { question: 'What if the leads are bad quality?', answer: 'We optimise for quality, not just volume. If lead quality dips, we adjust targeting, qualification questions, and creative. You\'ll always have a say in what "good" looks like.' },
+      { question: 'Do I need to reply to leads myself?', answer: 'Yes — you know your business best. But we set up instant auto-responses and WhatsApp alerts so you never miss a hot lead. Speed to lead is everything.' },
+      { question: 'What platforms do you run ads on?', answer: 'Primarily Meta (Facebook & Instagram) and Google. We\'ll recommend the right platform based on your business type and audience.' },
+      { question: 'What\'s the contract length?', answer: 'We work on monthly rolling agreements. No 6-month lock-ins. We keep you because the results keep you, not a contract.' },
+      { question: 'Will I see what you\'re spending my money on?', answer: 'Absolutely. You get full dashboard access showing every campaign, every pound spent, and every lead generated. Complete transparency.' },
+      { question: 'I\'ve been burned by agencies before. How are you different?', answer: 'We don\'t hide behind jargon or vanity metrics. You\'ll see real leads, real conversations, and real ROI. If it\'s not working, we\'ll tell you — and fix it.' },
+      { question: 'Do you create the ad content too?', answer: 'Yes — creative, copy, landing pages, and lead forms are all included. You approve everything before it goes live.' },
+      { question: 'What happens on the onboarding call?', answer: 'We\'ll map your offer, define your ideal customer, set up tracking, and plan your first campaign. Come prepared with your goals and any questions.' },
+    ],
+  },
+
+  studio: {
+    slug: 'studio',
+    name: 'AM:PM Studio',
+    tagline: 'Your sound. Perfected.',
+    description: 'Professional recording studio sessions in Glasgow.',
+    accentColor: ACCENT,
+    heroSubtitle: 'Your studio session is almost locked in. Read everything below so you arrive ready to record.',
+    vslNote: 'Watch this quick studio tour — see the room, the gear, and what your session day looks like.',
+    checklist: [
+      { label: 'Watch the studio tour above', detail: 'See the space, the setup, and what\'s waiting for you' },
+      { label: 'Bring your hard drive or USB', detail: 'We\'ll bounce your stems and masters to your drive before you leave. Don\'t rely on email or WeTransfer for large files.' },
+      { label: 'Bring reference tracks', detail: 'Songs that sound like what you\'re going for — tone, energy, mix style. This saves hours of guesswork.' },
+      { label: 'Have your lyrics written and rehearsed', detail: 'Studio time is expensive. Come knowing your words so we can focus on performance, not writing.' },
+      { label: 'Eat before you arrive', detail: 'Sessions run 1-5 hours. You\'ll perform better fed and hydrated. We have water and tea, but bring snacks if you need them.' },
+      { label: 'Come sober', detail: 'Our no-alcohol policy isn\'t a buzzkill — it\'s a quality guarantee. Every client who records sober leaves with better takes. Trust the process.' },
+      { label: 'Know your session length', detail: 'Check your booking confirmation: 1hr, 3hr, or 5hr. Plan your tracklist accordingly.' },
+    ],
+    whatToExpect: [
+      { title: 'Arrival & Setup (15 min)', description: 'You\'ll arrive, get settled, and we\'ll set up your session — headphone mix, mic check, levels. Bring your vibe, we handle the tech.' },
+      { title: 'Recording', description: 'Our engineer runs the session. You focus on performing. We\'ll guide you through takes, punch-ins, and layers to get the best out of every bar.' },
+      { title: 'Equipment in the Room', description: 'Neumann U87 & SM7B mics, Universal Audio interface, treated vocal booth, studio monitors, and a full plugin suite. Pro-grade, every session.' },
+      { title: 'Rough Mix Before You Leave', description: 'You\'ll hear a rough mix of your track(s) before you walk out. No waiting days to hear what you recorded.' },
+      { title: 'File Delivery', description: 'Stems (individual tracks), rough mix, and session files — all bounced to your hard drive or delivered via Google Drive within 24 hours.' },
+      { title: 'Mixing & Mastering (Optional)', description: 'Want a release-ready track? We offer professional mixing and mastering as an add-on. Ask your engineer on the day.' },
+    ],
+    faqs: [
+      { question: 'Why can\'t I drink in the studio?', answer: 'Because your music deserves your best performance. Every artist who\'s recorded sober with us has left with cleaner takes, fewer punch-ins, and a better final product. It\'s not a rule — it\'s an advantage.' },
+      { question: 'What should I bring?', answer: 'Hard drive or USB for file transfer, reference tracks, written lyrics, water, and snacks. That\'s it — we provide all the gear.' },
+      { question: 'Can I bring people with me?', answer: 'You can bring 1-2 people max. The studio is a focused environment — too many people affects the energy and the recording quality.' },
+      { question: 'What files do I leave with?', answer: 'Stems (individual vocal tracks), a rough mix, and the session file. If you\'ve booked mixing, you\'ll receive the final master within 3-5 days.' },
+      { question: 'Do I need to bring my own mic?', answer: 'No. We have industry-standard microphones (Neumann U87, Shure SM7B) and a full signal chain. Just bring yourself and your music.' },
+      { question: 'What if I need more time?', answer: 'If the studio is free after your slot, we can extend on the spot (subject to availability and additional cost). Let your engineer know early if you think you\'ll need more time.' },
+      { question: 'Is the engineer included?', answer: 'Yes — every session comes with a trained engineer who handles recording, levels, and session management. You focus on performing.' },
+      { question: 'How long is each session?', answer: '1-hour sessions are great for singles and quick recordings. 3-hour sessions suit most artists recording 1-2 tracks. 5-hour sessions are for full projects or artists who want mixing included.' },
+      { question: 'Can I book a session for podcasting or voiceover?', answer: 'Absolutely. The studio is set up for vocals of any kind — music, podcasts, voiceovers, audiobooks. Same quality, same setup.' },
+      { question: 'What\'s your cancellation policy?', answer: 'Cancel or reschedule with at least 24 hours\' notice for a full refund/rebooking. Less than 24 hours and the session fee is non-refundable — the slot was held for you.' },
+    ],
+  },
+
+  'vision-content': {
+    slug: 'vision-content',
+    name: 'AM:PM Vision — Content',
+    tagline: 'Content that converts.',
+    description: 'Short-form video content shoots for social media.',
+    accentColor: ACCENT,
+    heroSubtitle: 'Your content shoot is almost booked. Prepare properly and you\'ll leave with weeks of content.',
+    vslNote: 'Watch this 3-minute breakdown of what a content shoot looks like — and what you\'ll walk away with.',
+    checklist: [
+      { label: 'Watch the video above', detail: 'See real examples of what we produce and how the shoot day flows' },
+      { label: 'Plan 3-5 outfits', detail: 'Different looks = more content variety. Bring options and we\'ll help you pick on the day.' },
+      { label: 'Prepare your talking points', detail: 'We\'ll guide you on camera, but come with 5-10 topics or hooks you want to cover. Think FAQs, myths, hot takes.' },
+      { label: 'Know your content pillars', detail: 'What topics does your audience care about? Education, entertainment, behind-the-scenes, testimonials?' },
+      { label: 'Bring any props or products', detail: 'If you sell a physical product or have branded materials, bring them. They make great B-roll.' },
+      { label: 'Clear your schedule for the shoot window', detail: 'Don\'t rush. The best content comes when you\'re relaxed and present. Block the full time.' },
+    ],
+    whatToExpect: [
+      { title: 'Pre-Shoot Brief (Day Before)', description: 'We\'ll confirm your shot list, outfits, talking points, and any specific content you want. No surprises on shoot day.' },
+      { title: 'Shoot Day', description: 'Our videographer handles everything — lighting, audio, framing, direction. You just show up and be yourself. We\'ll coach you through every take.' },
+      { title: 'How Many Pieces You\'ll Get', description: 'A typical half-day content shoot produces 15-25 short-form videos. Full-day shoots can deliver 30-50+ pieces. That\'s weeks of content from one session.' },
+      { title: 'Edit Turnaround', description: 'First batch of edited content delivered within 5-7 working days. Each video is cut, captioned, colour-graded, and formatted for your platforms.' },
+      { title: 'File Formats', description: 'You\'ll receive vertical (9:16) and square (1:1) versions. MP4 files optimised for Instagram Reels, TikTok, YouTube Shorts, and LinkedIn.' },
+      { title: 'How to Use the Content', description: 'We\'ll provide a posting schedule and caption suggestions so you know exactly when and how to publish each piece for maximum impact.' },
+    ],
+    faqs: [
+      { question: 'What should I wear?', answer: 'Bring 3-5 outfits that represent your brand. Solid colours work best on camera. Avoid tiny stripes or busy patterns — they can cause visual flickering on video.' },
+      { question: 'Do I need to be good on camera?', answer: 'No. Most of our clients have never filmed content before. We direct every shot, coach your delivery, and edit out anything that doesn\'t work. You\'ll look natural and confident.' },
+      { question: 'How many videos will I get?', answer: 'Half-day shoots typically produce 15-25 edited short-form videos. Full-day shoots deliver 30-50+. Every shoot is planned to maximise output.' },
+      { question: 'How long until I get my content?', answer: 'First batch within 5-7 working days. Remaining content rolls out over 1-2 weeks depending on volume. Rush delivery available on request.' },
+      { question: 'Can I use the content on all platforms?', answer: 'Yes — you own the content. Use it on Instagram, TikTok, YouTube, LinkedIn, your website, email newsletters, ads — wherever you want.' },
+      { question: 'What if I don\'t like a video?', answer: 'Every project includes revision rounds. If a caption, cut, or colour grade isn\'t right, we\'ll adjust it. The goal is content you\'re excited to post.' },
+      { question: 'Do you provide a script?', answer: 'We provide talking point frameworks, not scripts. Scripted content feels stiff. We help you sound natural, confident, and on-brand.' },
+      { question: 'Where does the shoot happen?', answer: 'At our Glasgow studio, your location, or a relevant third-party location. We\'ll discuss the best setting for your brand on the pre-shoot brief.' },
+      { question: 'What equipment do you use?', answer: 'Sony cinema cameras, professional lighting rigs, wireless lapel mics, and gimbal stabilisers. Everything you need for scroll-stopping content.' },
+      { question: 'Can I also get photos from the shoot?', answer: 'Yes — we can pull high-quality stills from the video footage or shoot dedicated photos alongside. Let us know in advance so we plan for it.' },
+    ],
+  },
+
+  'vision-photo': {
+    slug: 'vision-photo',
+    name: 'AM:PM Vision — Photo',
+    tagline: 'Images that sell.',
+    description: 'Professional photography for brands and businesses.',
+    accentColor: ACCENT,
+    heroSubtitle: 'Your photo shoot is almost booked. Prepare well and you\'ll get images that work across every platform.',
+    vslNote: 'Watch this quick overview of our photo process — from shot list to final delivery.',
+    checklist: [
+      { label: 'Watch the video above', detail: 'See the quality, the style, and how a shoot day runs' },
+      { label: 'Build a shot list', detail: 'What specific images do you need? Headshots, product shots, lifestyle, behind-the-scenes? Write them down.' },
+      { label: 'Gather visual references', detail: 'Screenshot or save 5-10 images that match the look and feel you\'re going for. Pinterest boards work great.' },
+      { label: 'Prepare your wardrobe', detail: 'Bring 2-4 outfit changes. Think about your brand colours and the mood you want to convey.' },
+      { label: 'Bring your products or props', detail: 'Anything you want photographed — products, packaging, tools of your trade, branded items.' },
+      { label: 'Know where the photos will be used', detail: 'Website, social media, print, ads? This affects how we shoot, light, and frame everything.' },
+    ],
+    whatToExpect: [
+      { title: 'Pre-Shoot Planning', description: 'We\'ll review your shot list and references together, plan the lighting setups, and confirm the schedule. No wasted time on shoot day.' },
+      { title: 'Shoot Day', description: 'Our photographer handles lighting, posing direction, and composition. We shoot tethered so you can see images in real-time on a monitor.' },
+      { title: 'Backdrop & Setup', description: 'We have seamless paper backdrops, textured surfaces, and portable lighting kits. Studio or on-location — we bring the setup to you if needed.' },
+      { title: 'File Delivery', description: 'You\'ll receive high-resolution edited images via Google Drive. Web-optimised versions included for social media and website use.' },
+      { title: 'Turnaround', description: 'Edited gallery delivered within 5-7 working days. Rush delivery (48 hours) available for an additional fee.' },
+      { title: 'How to Brief Us', description: 'The more specific your brief, the better the results. Tell us the mood, the use case, and any must-have shots. We\'ll handle the rest.' },
+    ],
+    faqs: [
+      { question: 'How many final images will I get?', answer: 'This depends on your package, but a typical 2-hour shoot delivers 30-50 edited images. We\'ll confirm the exact number before booking.' },
+      { question: 'Do you do headshots?', answer: 'Yes — professional headshots for LinkedIn, team pages, press kits, and speaker profiles. We can knock these out in 15-20 minutes within a longer shoot.' },
+      { question: 'What\'s included in the editing?', answer: 'Colour correction, exposure balancing, skin retouching (natural, not plastic), cropping, and export in multiple sizes. Every image is hand-edited.' },
+      { question: 'Can I get raw/unedited files?', answer: 'We don\'t provide RAW files as standard — our editing is part of the product. If you need RAWs for a specific reason, we can discuss it.' },
+      { question: 'Where do shoots happen?', answer: 'At our Glasgow studio or on-location (your office, a venue, outdoors). On-location shoots may incur a travel fee depending on distance.' },
+      { question: 'What if I need photos for print?', answer: 'We shoot at high resolution specifically so images work for both digital and print. Just let us know the print sizes and we\'ll optimise accordingly.' },
+      { question: 'How should I prepare my skin/appearance?', answer: 'Come as you\'d want to be seen professionally. We recommend natural makeup (we can retouch minor things), clean/styled hair, and moisturised skin.' },
+      { question: 'Can you photograph products without a model?', answer: 'Absolutely. We do flat-lay, lifestyle product shots, and clean packshots. Bring your products and we\'ll make them look premium.' },
+      { question: 'Do you shoot video too?', answer: 'Yes — check out our Vision Content package for video. We can combine photo and video shoots on the same day for efficiency.' },
+      { question: 'What\'s the cancellation policy?', answer: 'Reschedule or cancel with 24+ hours notice for a full credit. Under 24 hours, the session fee is non-refundable.' },
+    ],
+  },
+
+  'brand-identity': {
+    slug: 'brand-identity',
+    name: 'AM:PM Brand Identity',
+    tagline: 'A brand worth remembering.',
+    description: 'Full brand identity design — from discovery to delivery.',
+    accentColor: ACCENT,
+    heroSubtitle: 'Your brand identity project is about to begin. Start thinking about these things before our discovery call.',
+    vslNote: 'Watch this walkthrough of our brand identity process — discovery to final delivery in under 5 minutes.',
+    checklist: [
+      { label: 'Watch the video above', detail: 'Understand the full process before your discovery call' },
+      { label: 'Think about your "why"', detail: 'Why does your business exist beyond making money? What problem do you solve? What do you believe?' },
+      { label: 'Define your audience', detail: 'Who is your ideal customer? Be specific — age, interests, values, where they spend time online.' },
+      { label: 'List 5 brands you admire', detail: 'Not necessarily competitors. Brands whose look, feel, or tone resonates with you. Screenshot everything.' },
+      { label: 'List 5 brands you don\'t like', detail: 'Equally important. What feels wrong, cheap, or off-brand to you? This helps us avoid dead ends.' },
+      { label: 'Gather your existing assets', detail: 'Current logo, colours, fonts, any brand guidelines you have — even if they\'re outdated. We need to see where you\'re starting from.' },
+      { label: 'Think about your competitive landscape', detail: 'Who are your main competitors? What do their brands look like? Where do you want to stand out?' },
+    ],
+    whatToExpect: [
+      { title: 'Discovery Session (60-90 min)', description: 'A deep dive into your business, audience, values, and vision. This is the foundation — everything we design flows from this conversation.' },
+      { title: 'Moodboard & Direction', description: 'Within 3-5 days, you\'ll receive a visual moodboard capturing the tone, colours, typography, and aesthetic direction. You\'ll approve this before we design anything.' },
+      { title: 'Concept Development', description: 'We develop 2-3 logo concepts with supporting typography and colour palettes. Each concept is presented with rationale — not just what it looks like, but why.' },
+      { title: 'Refinement', description: 'You pick your direction and we refine. Logo lockups, colour variations, icon system, typography hierarchy — all polished to perfection.' },
+      { title: 'Brand Guidelines Delivery', description: 'A complete brand book: logo usage rules, colour codes (HEX, RGB, CMYK, Pantone), typography, spacing, do\'s and don\'ts. Everything anyone needs to use your brand correctly.' },
+      { title: 'File Formats', description: 'Logo in SVG, PNG, EPS, PDF. Light and dark versions. Icon marks. Social media templates. Favicon. Everything in an organised drive folder.' },
+    ],
+    faqs: [
+      { question: 'How long does the full process take?', answer: 'Typically 3-4 weeks from discovery to final delivery. Rush timelines (2 weeks) are available for an additional fee. The biggest variable is how quickly you provide feedback.' },
+      { question: 'How many logo options do I see?', answer: 'We present 2-3 distinct concepts. You choose one direction, and we refine it through 2-3 rounds of revisions until it\'s perfect.' },
+      { question: 'What if I don\'t like any of the concepts?', answer: 'It\'s rare — the discovery session ensures we\'re aligned before designing. But if needed, we\'ll go back to the drawing board with your feedback. We don\'t deliver work you don\'t love.' },
+      { question: 'Do I own the final brand?', answer: 'Yes — 100% ownership transfers to you on final delivery. All files, all rights. It\'s yours forever.' },
+      { question: 'Can you redesign an existing brand?', answer: 'Absolutely. Many clients come to us for a rebrand or brand refresh. We\'ll assess what\'s working, what\'s not, and build from there.' },
+      { question: 'What\'s included in the brand guidelines?', answer: 'Logo usage rules, minimum sizes, clear space, colour palette (HEX, RGB, CMYK, Pantone), primary and secondary typography, imagery direction, tone of voice notes, and do\'s and don\'ts.' },
+      { question: 'Do you do brand strategy or just design?', answer: 'Our discovery session is strategic — we define your positioning, audience, and differentiation before touching design. If you need a full brand strategy document, we can scope that separately.' },
+      { question: 'Can you also build my website after?', answer: 'Yes — many clients go from brand identity straight into web design with us. Having the brand locked in first means the website is consistent and on-point from day one.' },
+      { question: 'What do I need to prepare for the discovery call?', answer: 'Your answers to the checklist above. The more thought you put in beforehand, the sharper the output. Don\'t stress about having "perfect" answers — we\'ll guide you through it.' },
+      { question: 'How much does a brand identity cost?', answer: 'We\'ll discuss pricing on the discovery call based on your scope. Every project is different — a startup logo vs. a full enterprise rebrand are very different briefs. Come with your budget range and we\'ll tailor the deliverables.' },
+    ],
+  },
+}
+
+export const divisionSlugs = Object.keys(divisions)
