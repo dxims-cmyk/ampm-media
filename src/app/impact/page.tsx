@@ -11,40 +11,36 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, tra
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } }
 
 const features = [
-  { icon: '🎯', title: 'AI Lead Scoring', description: 'Every enquiry scored and prioritised automatically based on intent signals and engagement data.' },
-  { icon: '📞', title: 'AI Receptionist', description: '24/7 phone answering that qualifies callers, answers FAQs, and books appointments - even at 3am.' },
-  { icon: '💬', title: 'AI SMS/WhatsApp Responder', description: 'Instant auto-replies that feel human. Qualifies leads and keeps conversations warm while you focus.' },
-  { icon: '⚡', title: '5-Second Alerts', description: 'WhatsApp, SMS, and email notifications the moment a lead comes in. Never miss another enquiry.' },
-  { icon: '📅', title: 'Smart Booking', description: 'Cal.com and Calendly integration. Leads book directly into your calendar with zero friction.' },
-  { icon: '📊', title: 'Dashboard & CRM', description: 'Pipeline management, lead notes, history, and tags. Plus HubSpot sync for enterprise teams.' },
-  { icon: '💳', title: 'Payments & Deposits', description: 'Stripe integration for booking deposits and upfront payments. Get paid before you show up.' },
-  { icon: '🧾', title: 'Accounting Sync', description: 'Xero and QuickBooks auto-invoicing. Every payment tracked, every invoice sent automatically.' },
+  { icon: '⚡', title: '5-Second WhatsApp Alerts', description: 'WhatsApp notification the moment a lead comes in. Be the first to respond, every time.' },
+  { icon: '🎯', title: 'AI Lead Scoring', description: 'Every enquiry scored 1-10 automatically based on intent signals and engagement data.' },
+  { icon: '💬', title: 'Unified Inbox', description: 'WhatsApp, SMS, Email, Instagram DM, and Messenger — every channel in one place.' },
+  { icon: '📅', title: 'Calendar + Cal.com', description: 'Leads book directly into your calendar with zero friction via Cal.com integration.' },
+  { icon: '🔄', title: 'Automations Builder', description: 'Rules, triggers, and follow-up sequences that keep leads warm without lifting a finger.' },
+  { icon: '📊', title: 'Lead Analytics', description: 'See where every lead comes from, what converts, and where to double down.' },
+  { icon: '📞', title: 'AI Receptionist', description: 'Vapi voice AI answers calls 24/7, qualifies leads, and books appointments. Growth plan and above.', badge: 'Growth+' },
+  { icon: '🚀', title: 'Outbound Lead Gen', description: 'Automated prospecting that finds and qualifies new leads for you. Pro plan only.', badge: 'Pro' },
+  { icon: '🖼️', title: 'Content Gallery', description: 'Centralised content library for your brand assets and campaign media. Pro plan only.', badge: 'Pro' },
+  { icon: '⭐', title: 'Reputation Management', description: 'Monitor and manage your online reviews and brand presence. Pro plan only.', badge: 'Pro' },
 ]
 
 const integrationGroups = [
   { label: 'Lead Sources', items: [
-    { name: 'Meta', status: 'connected' },
-    { name: 'TikTok', status: 'connected' },
-    { name: 'Google', status: 'connected' },
-    { name: 'WhatsApp', status: 'connected' },
-  ]},
-  { label: 'AI & Automation', items: [
-    { name: 'Claude', status: 'connected' },
-    { name: 'Zapier', status: 'connected' },
-  ]},
-  { label: 'Booking & Calendar', items: [
-    { name: 'Cal.com', status: 'connected' },
-    { name: 'Calendly', status: 'connected' },
+    { name: 'Meta Lead Ads', status: 'connected' },
+    { name: 'WhatsApp Business', status: 'connected' },
+    { name: 'Instagram DM', status: 'connected' },
+    { name: 'Facebook Messenger', status: 'connected' },
   ]},
   { label: 'Messaging', items: [
+    { name: 'SMS', status: 'connected' },
     { name: 'Email', status: 'connected' },
-    { name: 'Instagram DM', status: 'connected' },
-    { name: 'Messenger', status: 'connected' },
   ]},
-  { label: 'Business Tools', items: [
-    { name: 'Xero', status: 'coming' },
-    { name: 'Stripe', status: 'coming' },
-    { name: 'HubSpot', status: 'coming' },
+  { label: 'Booking & Billing', items: [
+    { name: 'Cal.com', status: 'connected' },
+    { name: 'Stripe', status: 'connected' },
+  ]},
+  { label: 'AI & Outbound', items: [
+    { name: 'Vapi', status: 'connected' },
+    { name: 'Apify', status: 'connected' },
   ]},
 ]
 
@@ -52,8 +48,8 @@ const faqs = [
   { question: 'How long until I see results?', answer: 'Most clients see increased engagement within the first month. Meaningful business results typically start around month 2-3.' },
   { question: 'What do I need to provide?', answer: 'Access to your social accounts, 2-3 hours per month for content capture, and responsiveness on WhatsApp for approvals.' },
   { question: 'Do you lock me into a long contract?', answer: "We require a 3-month minimum. After that, it's month-to-month. We keep clients because we deliver results." },
-  { question: 'What platforms do you manage?', answer: 'Instagram, TikTok, Facebook, and Google Ads. We focus on where your audience is most active and where ROI is highest.' },
-  { question: 'Can I just use the SaaS without the content team?', answer: 'Yes. Our SaaS-only tier at £1,500/month gives you the full lead management system, dashboard, and automations without the content production.' },
+  { question: 'What\'s the difference between Core, Growth, and Pro?', answer: 'Core gives you the full lead management platform — alerts, inbox, scoring, automations. Growth adds AI Receptionist for 24/7 call handling. Pro adds outbound lead generation, content gallery, and reputation management.' },
+  { question: 'Can I add features without upgrading?', answer: 'Yes. AI Receptionist can be added to any Core plan for £400/month. Outbound Lead Generation is available as an add-on for £300/month.' },
   { question: 'How is this different from a CRM?', answer: "A CRM stores data. Impact generates leads, scores them, notifies you instantly, and automates follow-up. It's a growth engine, not a database." },
 ]
 
@@ -74,13 +70,13 @@ export default function ImpactPage() {
               :Impact
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl sm:text-2xl text-white/90 mb-2 font-medium">
-              AI-powered lead management for businesses running paid ads
+              AI lead management for service businesses
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed">
-              Content strategy, Meta ads, lead management, and instant notifications - all in one platform. Stop losing leads to slow response times.
+              WhatsApp alerts in 5 seconds. Every channel in one inbox. Stop losing leads to slow response times.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Try :Impact Platform</Link>
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">See Impact in Action</Link>
               <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Book a Demo</Link>
             </motion.div>
 
@@ -192,7 +188,10 @@ export default function ImpactPage() {
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors backdrop-blur-sm">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors backdrop-blur-sm relative">
+                {feature.badge && (
+                  <span className="absolute top-4 right-4 px-2 py-0.5 bg-white/10 text-white/70 text-[10px] font-bold uppercase tracking-wider rounded-full">{feature.badge}</span>
+                )}
                 <span className="text-3xl mb-4 block">{feature.icon}</span>
                 <h3 className="text-lg font-display font-bold text-white mb-2">{feature.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
@@ -316,50 +315,71 @@ export default function ImpactPage() {
 
         {/* Integrations Marquee */}
         <div className="mt-16">
-          <ClientMarquee items={['Meta', 'TikTok', 'Google', 'WhatsApp', 'Claude', 'Cal.com', 'Calendly', 'Zapier', 'Xero', 'QuickBooks', 'Stripe', 'GoCardless', 'HubSpot', 'Mailchimp']} label="Integrates With" />
+          <ClientMarquee items={['Meta Lead Ads', 'WhatsApp Business', 'Instagram DM', 'Facebook Messenger', 'SMS', 'Email', 'Cal.com', 'Stripe', 'Vapi', 'Apify']} label="Integrates With" />
         </div>
       </section>
 
       {/* 8. PRICING */}
       <section className="relative py-24 px-6 bg-black/40">
-        <div className="container-wide max-w-4xl mx-auto">
+        <div className="container-wide max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Simple pricing. Serious results.</h2>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* SaaS Only */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Core */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-              <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">SaaS Only</p>
+              <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Core</p>
               <h3 className="text-4xl font-display font-bold text-white mb-1">£1,500<span className="text-lg text-white/50">/month</span></h3>
-              <p className="text-white/50 text-sm mb-8">The system. You handle content.</p>
+              <p className="text-white/50 text-sm mb-8">The full lead management platform.</p>
               <ul className="space-y-3 mb-8">
-                {[':Impact Dashboard & CRM', 'AI Lead Scoring', 'AI Receptionist (24/7 calls)', 'AI SMS/WhatsApp Responder', '5-Second Lead Alerts', 'Cal.com/Calendly Booking', 'Meta, TikTok, Google Integration', 'Zapier Connection', 'Xero/Stripe Integration'].map((item, i) => (
+                {['WhatsApp alerts (5 seconds)', 'AI lead scoring (1-10)', 'Unified inbox — 5 channels', 'Calendar + Cal.com integration', 'Automations builder', 'Lead analytics'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
                     <svg className="w-4 h-4 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                     {item}
                   </li>
                 ))}
               </ul>
-              <Link href="https://driveimpact.io/demo" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Get Started</Link>
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">See Impact in Action</Link>
             </motion.div>
 
-            {/* Full Service */}
+            {/* Growth */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white/10 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm relative">
-              <span className="absolute -top-3 right-6 px-3 py-1 bg-white text-impact text-xs font-bold uppercase tracking-wider rounded-full">Recommended</span>
-              <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Full Service</p>
-              <h3 className="text-4xl font-display font-bold text-white mb-1">£2,500<span className="text-lg text-white/50">/month</span></h3>
-              <p className="text-white/50 text-sm mb-8">System + AM:PM content team.</p>
+              <span className="absolute -top-3 right-6 px-3 py-1 bg-white text-impact text-xs font-bold uppercase tracking-wider rounded-full">Most Popular</span>
+              <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Growth</p>
+              <h3 className="text-4xl font-display font-bold text-white mb-1">£2,000<span className="text-lg text-white/50">/month</span></h3>
+              <p className="text-white/50 text-sm mb-8">Core + AI call handling.</p>
               <ul className="space-y-3 mb-8">
-                {['Everything in SaaS Only', 'AM:PM Content Team', 'Monthly Content Creation', 'Strategy Calls', 'Priority Support', 'HubSpot/CRM Migration Help'].map((item, i) => (
+                {['Everything in Core', 'AI Receptionist — 24/7 calls', 'Qualifies leads & books appointments', 'Priority support'].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
                     <svg className="w-4 h-4 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                     {item}
                   </li>
                 ))}
               </ul>
-              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="block w-full bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-all hover:-translate-y-1 uppercase tracking-wide text-center">Book a Demo</Link>
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="block w-full bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-all hover:-translate-y-1 uppercase tracking-wide text-center">See Impact in Action</Link>
+            </motion.div>
+
+            {/* Pro */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+              <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Pro</p>
+              <h3 className="text-4xl font-display font-bold text-white mb-1">£2,500<span className="text-lg text-white/50">/month</span></h3>
+              <p className="text-white/50 text-sm mb-8">The full growth engine.</p>
+              <ul className="space-y-3 mb-8">
+                {['Everything in Growth', 'Outbound lead generation', 'Content gallery', 'Reputation management', 'Dedicated account manager'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-white/80 text-sm">
+                    <svg className="w-4 h-4 text-white/60 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">See Impact in Action</Link>
             </motion.div>
           </div>
+
+          {/* Add-ons note */}
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center text-white/40 text-sm mt-8">
+            Need just one feature? Add AI Receptionist (£400/mo) or Outbound Leads (£300/mo) to any Core plan.
+          </motion.p>
         </div>
       </section>
 
@@ -415,7 +435,7 @@ export default function ImpactPage() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mt-8 mb-6">Ready to grow?</h2>
           <p className="text-xl text-white/80 mb-10 font-light">Book a free audit and see how many leads you're leaving on the table.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-10 py-5 rounded-full hover:bg-white/90 transition-all transform hover:-translate-y-1 shadow-lg uppercase tracking-widest">Book Your Audit</Link>
+            <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-10 py-5 rounded-full hover:bg-white/90 transition-all transform hover:-translate-y-1 shadow-lg uppercase tracking-widest">See Impact in Action</Link>
             <Link href="/contact" className="border border-white text-white font-bold px-10 py-5 rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1 uppercase tracking-widest">Send a Message</Link>
           </div>
         </div>
