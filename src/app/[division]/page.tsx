@@ -8,7 +8,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { ImpactAbout, ImpactFeatures, ImpactPricing, ImpactIntegrations, ImpactCTA } from '@/components/sections/ImpactSections'
 import { activeDivisions } from '@/lib/config'
 
 // Map URL slugs to division IDs
@@ -129,182 +128,169 @@ export default function DivisionPage() {
         {/* SEO H1 - Visually hidden but accessible */}
         <h1 className="sr-only">{seo.h1}</h1>
 
-        {/* Impact gets custom sections; other divisions get the generic layout */}
-        {divisionId === 'impact' ? (
-          <>
-            <ImpactAbout />
-            <ImpactFeatures />
-            <ImpactPricing />
-            <ImpactIntegrations />
-            <ImpactCTA />
-          </>
-        ) : (
-          <>
-            {/* About Section */}
-            <section
-              className="py-24"
-              style={{ backgroundColor: division.bgColor }}
-              aria-labelledby="about-division"
+        {/* About Section */}
+        <section 
+          className="py-24"
+          style={{ backgroundColor: division.bgColor }}
+          aria-labelledby="about-division"
+        >
+          <div className="max-w-4xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="max-w-4xl mx-auto px-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+              <span 
+                className="text-sm uppercase tracking-[0.2em] opacity-40"
+                style={{ color: division.textColor }}
+              >
+                About {division.shortName}
+              </span>
+              <h2 
+                id="about-division"
+                className="text-3xl md:text-4xl font-bold mt-4 mb-6"
+                style={{ color: division.textColor }}
+              >
+                {division.tagline} — {division.name} Glasgow
+              </h2>
+              <p 
+                className="text-lg leading-relaxed opacity-60"
+                style={{ color: division.textColor }}
+              >
+                {division.description}
+              </p>
+              <p 
+                className="text-lg leading-relaxed opacity-60 mt-4"
+                style={{ color: division.textColor }}
+              >
+                Based in Glasgow, Scotland, {division.name} is part of the <Link href="/" className="underline opacity-80 hover:opacity-100">AM:PM Media</Link> creative 
+                agency ecosystem, delivering professional {division.services.slice(0, 3).join(', ').toLowerCase()} services to businesses and artists across Scotland and beyond.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section 
+          className="py-24 border-t"
+          style={{ 
+            backgroundColor: division.bgColor,
+            borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
+          }}
+          aria-labelledby="services-section"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-12"
+            >
+              <span 
+                className="text-sm uppercase tracking-[0.2em] opacity-40"
+                style={{ color: division.textColor }}
+              >
+                Our Services
+              </span>
+              <h2 
+                id="services-section"
+                className="text-3xl md:text-4xl font-bold mt-4"
+                style={{ color: division.textColor }}
+              >
+                {division.shortName} Services by AM:PM Media
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {division.services.map((service, index) => (
+                <motion.article
+                  key={service}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 border"
+                  style={{ 
+                    borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
+                  }}
                 >
-                  <span
-                    className="text-sm uppercase tracking-[0.2em] opacity-40"
+                  <span 
+                    className="text-4xl font-bold opacity-20"
                     style={{ color: division.textColor }}
+                    aria-hidden="true"
                   >
-                    About {division.shortName}
+                    {String(index + 1).padStart(2, '0')}
                   </span>
-                  <h2
-                    id="about-division"
-                    className="text-3xl md:text-4xl font-bold mt-4 mb-6"
+                  <h3 
+                    className="text-lg font-semibold mt-4"
                     style={{ color: division.textColor }}
                   >
-                    {division.tagline} — {division.name} Glasgow
-                  </h2>
-                  <p
-                    className="text-lg leading-relaxed opacity-60"
+                    {service}
+                  </h3>
+                  <p 
+                    className="text-sm mt-2 opacity-50"
                     style={{ color: division.textColor }}
                   >
-                    {division.description}
+                    Professional {service.toLowerCase()} services in Glasgow by AM:PM Media.
                   </p>
-                  <p
-                    className="text-lg leading-relaxed opacity-60 mt-4"
-                    style={{ color: division.textColor }}
-                  >
-                    Based in Glasgow, Scotland, {division.name} is part of the <Link href="/" className="underline opacity-80 hover:opacity-100">AM:PM Media</Link> creative
-                    agency ecosystem, delivering professional {division.services.slice(0, 3).join(', ').toLowerCase()} services to businesses and artists across Scotland and beyond.
-                  </p>
-                </motion.div>
-              </div>
-            </section>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            {/* Services Section */}
-            <section
-              className="py-24 border-t"
-              style={{
-                backgroundColor: division.bgColor,
-                borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
-              }}
-              aria-labelledby="services-section"
+        {/* Contact CTA */}
+        <section 
+          id="contact-section" 
+          className="py-24 border-t"
+          style={{ 
+            backgroundColor: division.bgColor,
+            borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
+          }}
+          aria-labelledby="contact-cta"
+        >
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="max-w-6xl mx-auto px-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="mb-12"
-                >
-                  <span
-                    className="text-sm uppercase tracking-[0.2em] opacity-40"
-                    style={{ color: division.textColor }}
-                  >
-                    Our Services
-                  </span>
-                  <h2
-                    id="services-section"
-                    className="text-3xl md:text-4xl font-bold mt-4"
-                    style={{ color: division.textColor }}
-                  >
-                    {division.shortName} Services by AM:PM Media
-                  </h2>
-                </motion.div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {division.services.map((service, index) => (
-                    <motion.article
-                      key={service}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="p-6 border"
-                      style={{
-                        borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
-                      }}
-                    >
-                      <span
-                        className="text-4xl font-bold opacity-20"
-                        style={{ color: division.textColor }}
-                        aria-hidden="true"
-                      >
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <h3
-                        className="text-lg font-semibold mt-4"
-                        style={{ color: division.textColor }}
-                      >
-                        {service}
-                      </h3>
-                      <p
-                        className="text-sm mt-2 opacity-50"
-                        style={{ color: division.textColor }}
-                      >
-                        Professional {service.toLowerCase()} services in Glasgow by AM:PM Media.
-                      </p>
-                    </motion.article>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Contact CTA */}
-            <section
-              id="contact-section"
-              className="py-24 border-t"
-              style={{
-                backgroundColor: division.bgColor,
-                borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)'
-              }}
-              aria-labelledby="contact-cta"
-            >
-              <div className="max-w-4xl mx-auto px-6 text-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <h2
-                    id="contact-cta"
-                    className="text-3xl md:text-5xl font-bold mb-6"
-                    style={{ color: division.textColor }}
-                  >
-                    Start Your {division.shortName} Project
-                  </h2>
-                  <p
-                    className="text-lg mb-10 opacity-60"
-                    style={{ color: division.textColor }}
-                  >
-                    Ready to work with {division.name}? Contact our Glasgow team and let&apos;s bring your vision to life.
-                  </p>
-                  <a
-                    href="mailto:dxims@mediampm.com"
-                    className="inline-block px-8 py-4 border text-sm uppercase tracking-wider transition-all duration-300"
-                    style={{
-                      borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)',
-                      color: division.textColor
-                    }}
-                    aria-label={`Contact ${division.name} at dxims@mediampm.com`}
-                  >
-                    Get in touch
-                  </a>
-                  <p
-                    className="text-sm mt-6 opacity-40"
-                    style={{ color: division.textColor }}
-                  >
-                    Part of <Link href="/" className="underline">AM:PM Media</Link> • Glasgow, Scotland
-                  </p>
-                </motion.div>
-              </div>
-            </section>
-          </>
-        )}
+              <h2 
+                id="contact-cta"
+                className="text-3xl md:text-5xl font-bold mb-6"
+                style={{ color: division.textColor }}
+              >
+                Start Your {division.shortName} Project
+              </h2>
+              <p 
+                className="text-lg mb-10 opacity-60"
+                style={{ color: division.textColor }}
+              >
+                Ready to work with {division.name}? Contact our Glasgow team and let&apos;s bring your vision to life.
+              </p>
+              <a
+                href="mailto:dxims@mediampm.com"
+                className="inline-block px-8 py-4 border text-sm uppercase tracking-wider transition-all duration-300"
+                style={{ 
+                  borderColor: division.textColor === '#000000' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)',
+                  color: division.textColor
+                }}
+                aria-label={`Contact ${division.name} at dxims@mediampm.com`}
+              >
+                Get in touch
+              </a>
+              <p 
+                className="text-sm mt-6 opacity-40"
+                style={{ color: division.textColor }}
+              >
+                Part of <Link href="/" className="underline">AM:PM Media</Link> • Glasgow, Scotland
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Navigation to other divisions */}
         <nav 
