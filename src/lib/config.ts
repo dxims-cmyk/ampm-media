@@ -157,7 +157,7 @@ export const divisions: Division[] = [
     shortName: 'Impact',
     displayName: 'IMPACT',
     tagline: 'Growth engineered',
-    description: 'Data-driven marketing strategy, paid social campaigns, and conversion optimization that delivers measurable results. Strategic growth, quantified. Separate SaaS platform coming soon.',
+    description: 'AI-powered lead management that contacts prospects in under 30 seconds, qualifies them by phone, and routes hot leads straight to your phone. Built for businesses running paid ads.',
     services: ['Marketing Strategy', 'Paid Social Ads', 'Campaign Management', 'Conversion Optimization', 'Analytics', 'Performance Marketing'],
     status: 'active',
     pillar: 'GROW',
