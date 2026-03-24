@@ -70,13 +70,13 @@ export default function ImpactPage() {
               :Impact
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl sm:text-2xl text-white/90 mb-2 font-medium">
-              AI lead management for service businesses
+              Your leads go cold in 5 minutes. We respond in 5 seconds.
             </motion.p>
             <motion.p variants={fadeUp} className="text-lg text-white/60 mb-8 max-w-2xl leading-relaxed">
-              WhatsApp alerts in 5 seconds. Every channel in one inbox. Stop losing leads to slow response times.
+              AI lead management for service businesses running Meta Ads. Every lead captured, scored, and sent to your WhatsApp before your competitor checks their email.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
-              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">See Impact in Action</Link>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors uppercase tracking-wide text-center">Book a Free Audit</Link>
               <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Book a Demo</Link>
             </motion.div>
 
@@ -119,9 +119,9 @@ export default function ImpactPage() {
       <section className="relative py-24 px-6 bg-gradient-to-b from-transparent to-black/20">
         <div className="container-wide max-w-3xl mx-auto text-center relative z-10">
           <p className="text-white/60 text-sm font-bold uppercase tracking-wider mb-4">Sound familiar?</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-12">You're posting content, but it's not converting</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-12">You're spending on ads, but losing every lead</h2>
           <div className="grid sm:grid-cols-2 gap-4 text-left">
-            {["You spend hours creating content that gets 12 likes", "You've tried boosting posts with zero results", "Leads come in but you respond hours later", "Your competitors are everywhere and you're invisible"].map((item, i) => (
+            {["Leads come in from Meta Ads. Nobody follows up.", "You respond hours — or days — later.", "No idea which campaigns actually bring revenue.", "Your competitor picks up the phone first."].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="flex items-start gap-4 p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors backdrop-blur-sm">
                 <svg className="w-6 h-6 text-white/40 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
                 <span className="text-white/90 font-medium">{item}</span>
@@ -180,6 +180,50 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      {/* 3b. RESPONSIBILITY SPLIT */}
+      <section className="relative py-24 px-6 bg-black/20">
+        <div className="container-wide max-w-5xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">We handle the system. You close the deal.</h2>
+            <p className="text-white/60 max-w-xl mx-auto">Here&apos;s exactly what changes when you switch on :Impact.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                </div>
+                <h3 className="text-xl font-display font-bold text-white">Impact handles</h3>
+              </div>
+              <ul className="space-y-3">
+                {['Instant WhatsApp alerts when leads come in', 'AI scoring & qualification (1-10)', 'Auto follow-up sequences', '24/7 AI call answering & booking', 'Campaign ROI tracking', 'Unified inbox across 5 channels'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                    <svg className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                </div>
+                <h3 className="text-xl font-display font-bold text-white">You handle</h3>
+              </div>
+              <ul className="space-y-3">
+                {['Pick up the phone when we alert you', 'Close the deal (the bit that makes you money)', 'Tell us about your business so AI knows what to say', 'Check your dashboard when you want insights', 'Give us feedback so we keep improving', 'That\'s it. Seriously.'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                    <svg className="w-4 h-4 text-white/40 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. FEATURES GRID */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-black/20 to-black/30">
         <div className="container-wide">
@@ -195,6 +239,30 @@ export default function ImpactPage() {
                 <span className="text-3xl mb-4 block">{feature.icon}</span>
                 <h3 className="text-lg font-display font-bold text-white mb-2">{feature.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4b. NOT ANOTHER CRM */}
+      <section className="relative py-24 px-6 bg-black/30">
+        <div className="container-wide max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <p className="text-white/60 text-sm font-bold uppercase tracking-wider mb-4">Not another CRM</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Built for SMBs. Not enterprise bloat.</h2>
+            <p className="text-white/60 max-w-2xl mx-auto">GoHighLevel has 400 features you&apos;ll never use. HubSpot costs more than your rent. :Impact does one thing — turns ad spend into revenue — and does it faster than both.</p>
+          </motion.div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { stat: '48hrs', label: 'Live & running', desc: 'Not 6 months of onboarding' },
+              { stat: '33,840x', label: 'Faster response', desc: 'vs industry average of 47 hours' },
+              { stat: '0', label: 'Features you don\'t need', desc: 'No bloat, no confusion' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-sm">
+                <p className="text-3xl sm:text-4xl font-display font-bold text-white mb-1">{item.stat}</p>
+                <p className="text-white/90 text-sm font-bold uppercase tracking-wider mb-1">{item.label}</p>
+                <p className="text-white/40 text-xs">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -228,19 +296,19 @@ export default function ImpactPage() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             <TestimonialVideoCard
-              quote="The speed-to-lead system is a game changer. Getting a WhatsApp the second someone enquires means we never miss an opportunity."
-              name="Restaurant Owner"
-              business="Glasgow Hospitality"
+              quote="The speed-to-lead system is a game changer. Getting a WhatsApp the second someone enquires means we never miss an opportunity. 548% revenue growth in 6 months."
+              name="Namak Mandi"
+              business="Glasgow Restaurant"
             />
             <TestimonialVideoCard
-              quote="We were posting content but getting nothing back. AM:PM built us a system that actually converts followers into customers."
-              name="Bar Manager"
-              business="Glasgow Nightlife Venue"
+              quote="We went from missing half our enquiries to responding in seconds. The unified inbox means nothing falls through the cracks."
+              name="Palais Bar"
+              business="Glasgow Nightlife"
             />
             <TestimonialVideoCard
-              quote="The dashboard alone is worth it. I can see exactly where every lead comes from and what's converting."
-              name="Business Owner"
-              business="Glasgow Business"
+              quote="The dashboard alone is worth it. I can see exactly where every lead comes from and what's converting. We know exactly which ads to double down on."
+              name="Obera Beauty & Spa"
+              business="Glasgow Beauty Salon"
             />
           </div>
         </div>
@@ -339,7 +407,7 @@ export default function ImpactPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">See Impact in Action</Link>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Book a Free Audit</Link>
             </motion.div>
 
             {/* Growth */}
@@ -356,7 +424,7 @@ export default function ImpactPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="block w-full bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-all hover:-translate-y-1 uppercase tracking-wide text-center">See Impact in Action</Link>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="block w-full bg-white text-impact font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-all hover:-translate-y-1 uppercase tracking-wide text-center">Book a Free Audit</Link>
             </motion.div>
 
             {/* Pro */}
@@ -372,7 +440,7 @@ export default function ImpactPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">See Impact in Action</Link>
+              <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="block w-full border border-white/30 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors uppercase tracking-wide text-center">Book a Free Audit</Link>
             </motion.div>
           </div>
 
@@ -416,6 +484,30 @@ export default function ImpactPage() {
       {/* Client Marquee - Lead Gen Clients */}
       <ClientMarquee items={['Namak Mandi', 'Palais Bar', 'Wee Drop', 'Obera Beauty & Spa']} />
 
+      {/* 9b. SECURITY & TRUST */}
+      <section className="relative py-24 px-6 bg-black/50">
+        <div className="container-wide max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-4">Your data is locked down</h2>
+            <p className="text-white/60 max-w-xl mx-auto">Enterprise-grade security without the enterprise price tag.</p>
+          </motion.div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: '🔐', title: 'AES-256 Encryption', desc: 'All tokens and credentials encrypted at rest' },
+              { icon: '🛡️', title: 'Row-Level Security', desc: 'Your data is invisible to other accounts' },
+              { icon: '💳', title: 'Stripe Payments', desc: 'PCI-compliant billing — we never see your card' },
+              { icon: '🔑', title: 'OAuth 2.0', desc: 'Secure Meta & Google integration — no passwords stored' },
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-sm">
+                <span className="text-2xl mb-3 block">{item.icon}</span>
+                <h3 className="text-sm font-display font-bold text-white mb-1">{item.title}</h3>
+                <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 10. FAQ */}
       <section className="relative py-24 px-6 bg-black/50">
         <div className="container-wide max-w-3xl mx-auto">
@@ -435,7 +527,7 @@ export default function ImpactPage() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mt-8 mb-6">Ready to grow?</h2>
           <p className="text-xl text-white/80 mb-10 font-light">Book a free audit and see how many leads you're leaving on the table.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="https://driveimpact.io" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-10 py-5 rounded-full hover:bg-white/90 transition-all transform hover:-translate-y-1 shadow-lg uppercase tracking-widest">See Impact in Action</Link>
+            <Link href="https://cal.com/ampmedia/30min" target="_blank" rel="noopener noreferrer" className="bg-white text-impact font-bold px-10 py-5 rounded-full hover:bg-white/90 transition-all transform hover:-translate-y-1 shadow-lg uppercase tracking-widest">Book a Free Audit</Link>
             <Link href="/contact" className="border border-white text-white font-bold px-10 py-5 rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1 uppercase tracking-widest">Send a Message</Link>
           </div>
         </div>
